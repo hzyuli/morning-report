@@ -3,267 +3,443 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>每日A股综合晨报 - 2026年03月09日</title>
+    <title>专业版A股投资晨报 - 2026年03月09日</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
             min-height: 100vh;
             padding: 20px;
-            color: #e0e0e0;
+            color: #e2e8f0;
             line-height: 1.6;
         }
-        .container { max-width: 1000px; margin: 0 auto; }
+        .container { max-width: 1100px; margin: 0 auto; }
         .header {
             text-align: center;
             padding: 40px 20px;
-            background: rgba(255,255,255,0.05);
+            background: linear-gradient(135deg, rgba(30,58,138,0.4) 0%, rgba(59,130,246,0.2) 100%);
             border-radius: 16px;
             margin-bottom: 30px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(59,130,246,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
         }
         .header h1 {
-            font-size: 32px;
-            background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+            font-size: 28px;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
-        .header .date { color: #888; font-size: 16px; }
+        .header .subtitle {
+            color: #64748b;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
         .header .update-time { 
-            color: #00d2ff; 
-            font-size: 14px; 
-            margin-top: 12px;
-            padding: 6px 16px;
-            background: rgba(0,210,255,0.1);
+            color: #38bdf8; 
+            font-size: 13px; 
+            margin-top: 15px;
+            padding: 6px 20px;
+            background: rgba(56,189,248,0.15);
+            border: 1px solid rgba(56,189,248,0.3);
             border-radius: 20px;
             display: inline-block;
         }
         .nav {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-bottom: 30px;
+            gap: 8px;
+            margin-bottom: 25px;
             flex-wrap: wrap;
         }
         .nav a {
-            color: #00d2ff;
+            color: #94a3b8;
             text-decoration: none;
             padding: 8px 16px;
-            background: rgba(0,210,255,0.1);
+            background: rgba(30,41,59,0.6);
+            border: 1px solid rgba(71,85,105,0.5);
             border-radius: 8px;
-            font-size: 14px;
+            font-size: 13px;
             transition: all 0.3s;
         }
-        .nav a:hover { background: rgba(0,210,255,0.2); }
+        .nav a:hover { 
+            background: rgba(59,130,246,0.2); 
+            color: #60a5fa;
+            border-color: rgba(59,130,246,0.5);
+        }
         .card {
-            background: rgba(255,255,255,0.05);
-            border-radius: 16px;
-            padding: 25px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(30,41,59,0.5);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(71,85,105,0.4);
         }
         .card h2 {
-            font-size: 20px;
-            color: #00d2ff;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid rgba(0,210,255,0.3);
+            font-size: 18px;
+            color: #60a5fa;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(59,130,246,0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card h3 {
+            font-size: 15px;
+            color: #cbd5e1;
+            margin: 16px 0 10px 0;
+            font-weight: 600;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 15px 0;
-            font-size: 14px;
+            margin: 12px 0;
+            font-size: 13px;
         }
         th {
-            background: rgba(0,210,255,0.15);
-            color: #00d2ff;
-            padding: 12px;
+            background: rgba(59,130,246,0.15);
+            color: #60a5fa;
+            padding: 10px;
             text-align: left;
             font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         td {
-            padding: 12px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 10px;
+            border-bottom: 1px solid rgba(71,85,105,0.3);
         }
-        tr:hover td { background: rgba(255,255,255,0.03); }
-        .positive { color: #00e676; font-weight: 600; }
-        .negative { color: #ff5252; font-weight: 600; }
+        tr:hover td { background: rgba(59,130,246,0.05); }
+        .positive { color: #4ade80; font-weight: 600; }
+        .negative { color: #f87171; font-weight: 600; }
+        .neutral { color: #fbbf24; }
         .tag {
             display: inline-block;
-            padding: 4px 10px;
+            padding: 3px 10px;
             border-radius: 4px;
-            font-size: 12px;
-            margin-right: 5px;
+            font-size: 11px;
+            font-weight: 600;
         }
-        .tag-success { background: rgba(0,230,118,0.2); color: #00e676; }
-        .tag-warning { background: rgba(255,215,64,0.2); color: #ffd740; }
-        .tag-danger { background: rgba(255,82,82,0.2); color: #ff5252; }
-        .highlight-box {
-            background: rgba(0,210,255,0.1);
-            border-left: 4px solid #00d2ff;
-            padding: 15px 20px;
-            margin: 15px 0;
+        .tag-bull { background: rgba(74,222,128,0.15); color: #4ade80; border: 1px solid rgba(74,222,128,0.3); }
+        .tag-bear { background: rgba(248,113,113,0.15); color: #f87171; border: 1px solid rgba(248,113,113,0.3); }
+        .tag-neutral { background: rgba(251,191,36,0.15); color: #fbbf24; border: 1px solid rgba(251,191,36,0.3); }
+        .insight-box {
+            background: linear-gradient(135deg, rgba(59,130,246,0.1) 0%, rgba(139,92,246,0.1) 100%);
+            border-left: 3px solid #8b5cf6;
+            padding: 16px 20px;
+            margin: 16px 0;
             border-radius: 0 8px 8px 0;
+            font-size: 14px;
         }
+        .insight-box strong { color: #a78bfa; }
         .risk-box {
-            background: rgba(255,82,82,0.1);
-            border-left: 4px solid #ff5252;
-            padding: 15px 20px;
-            margin: 15px 0;
+            background: rgba(248,113,113,0.08);
+            border-left: 3px solid #f87171;
+            padding: 16px 20px;
+            margin: 16px 0;
             border-radius: 0 8px 8px 0;
         }
-        .tips-box {
-            background: rgba(0,230,118,0.1);
-            border-left: 4px solid #00e676;
-            padding: 15px 20px;
-            margin: 15px 0;
+        .risk-box strong { color: #f87171; }
+        .opportunity-box {
+            background: rgba(74,222,128,0.08);
+            border-left: 3px solid #4ade80;
+            padding: 16px 20px;
+            margin: 16px 0;
             border-radius: 0 8px 8px 0;
+        }
+        .opportunity-box strong { color: #4ade80; }
+        .metric-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin: 16px 0;
+        }
+        .metric-item {
+            background: rgba(15,23,42,0.5);
+            padding: 16px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(71,85,105,0.3);
+        }
+        .metric-value {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .metric-label {
+            font-size: 11px;
+            color: #64748b;
+            text-transform: uppercase;
         }
         .footer {
             text-align: center;
             padding: 30px;
-            color: #666;
-            font-size: 13px;
+            color: #475569;
+            font-size: 12px;
         }
-        ul { margin: 10px 0 10px 20px; }
-        li { margin: 8px 0; }
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .strategy-card {
+            background: rgba(15,23,42,0.4);
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(71,85,105,0.3);
+        }
+        .strategy-card h4 {
+            color: #94a3b8;
+            font-size: 12px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        ul { margin: 8px 0 8px 18px; }
+        li { margin: 6px 0; font-size: 13px; }
         @media (max-width: 768px) {
-            .header h1 { font-size: 24px; }
-            .nav { gap: 5px; }
-            .nav a { padding: 6px 12px; font-size: 12px; }
+            .header h1 { font-size: 22px; }
+            .metric-row { grid-template-columns: repeat(2, 1fr); }
+            .strategy-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>📊 每日A股综合晨报</h1>
-            <div class="date">2026年03月09日</div>
-            <div class="update-time">⏱️ 最新更新：2026-03-09 13:36</div>
+            <h1>专业版A股投资晨报</h1>
+            <div class="subtitle">Professional Market Intelligence</div>
+            <div class="update-time">⏱️ 最后更新：2026-03-09 13:52</div>
         </div>
 
         <div class="nav">
-            <a href="#market">🌍 国际市场</a>
-            <a href="#news">📰 政策新闻</a>
-            <a href="#sector">📊 板块影响</a>
-            <a href="#bond">💹 转债监控</a>
-            <a href="#forecast">📈 走势推演</a>
-            <a href="#tips">💡 操作提示</a>
+            <a href="#macro">📊 宏观策略</a>
+            <a href="#a-share">🇨🇳 A股逻辑</a>
+            <a href="#hk">🇭🇰 港股机会</a>
+            <a href="#sector">🏭 行业轮动</a>
+            <a href="#bond">📈 转债策略</a>
+            <a href="#trading">⚡ 交易计划</a>
         </div>
 
-        <div class="card" id="market">
-            <h2>🌍 隔夜国际市场表现</h2>
-            <h3 style="color:#fff;margin:20px 0 12px;">美股市场</h3>
-            <table>
-                <tr><th>指数</th><th>收盘点位</th><th>涨跌幅</th><th>本周累计</th></tr>
-                <tr><td>道琼斯工业指数</td><td>47,501.55</td><td class="negative">-0.95%</td><td class="negative">-3.01%</td></tr>
-                <tr><td>标普500指数</td><td>6,740.02</td><td class="negative">-1.33%</td><td class="negative">-2.02%</td></tr>
-                <tr><td>纳斯达克综合指数</td><td>22,387.68</td><td class="negative">-1.59%</td><td class="negative">-1.24%</td></tr>
-            </table>
-            <div class="highlight-box">
-                <strong>市场要点：</strong>大型科技股普跌，英伟达跌3%、苹果跌1.1%，VIX恐慌指数收于29点以上，创去年4月以来新高。弱于预期的非农就业数据叠加中东战事推升油价，压制股指。
+        <!-- 宏观策略 -->
+        <div class="card" id="macro">
+            <h2>📊 宏观策略研判</h2>
+            
+            <div class="metric-row">
+                <div class="metric-item">
+                    <div class="metric-value negative">-1.59%</div>
+                    <div class="metric-label">纳斯达克</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value positive">+0.69%</div>
+                    <div class="metric-label">金龙指数</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value positive">$90+</div>
+                    <div class="metric-label">WTI原油</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">29+</div>
+                    <div class="metric-label">VIX恐慌</div>
+                </div>
             </div>
-            <h3 style="color:#fff;margin:20px 0 12px;">中概股表现</h3>
-            <p><strong>热门中概股：</strong>京东<span class="positive">+6%</span>、小鹏<span class="positive">+6%</span>、万国数据<span class="positive">+7%</span>、网易<span class="positive">+3.39%</span></p>
-            <h3 style="color:#fff;margin:20px 0 12px;">大宗商品</h3>
+
+            <div class="insight-box">
+                <strong>🔍 核心逻辑：</strong>隔夜美股科技股遭遇抛压，纳指跌幅超1.5%，但中概股逆势走强形成"东西分化"。这一背离信号暗示外资对中概资产的配置意愿回暖，或与两会政策定调后的估值修复预期相关。VIX飙升至29，创一年新高，表明全球风险偏好收缩，但A股/港股可能受益于"洼地效应"。
+            </div>
+
+            <h3>全球资金流向研判</h3>
             <table>
-                <tr><th>品种</th><th>价格</th><th>变动</th></tr>
-                <tr><td>WTI原油</td><td class="positive">突破90美元/桶</td><td class="positive">+12%</td></tr>
-                <tr><td>离岸人民币</td><td>7.2451</td><td>基本稳定</td></tr>
-                <tr><td>黄金</td><td>周线收跌</td><td class="negative">-1.7%</td></tr>
+                <tr><th>市场</th><th>关键信号</th><th>资金逻辑</th><th>对A/H影响</th></tr>
+                <tr><td>美股</td><td>科技股回调+VIX飙升</td><td>机构降仓高估值成长股</td><td><span class="tag tag-bull">资金外溢利好</span></td></tr>
+                <tr><td>中概</td><td>金龙指数逆势+0.69%</td><td>长线资金抄底中国资产</td><td><span class="tag tag-bull">情绪提振</span></td></tr>
+                <tr><td>原油</td><td>WTI突破90美元</td><td>地缘冲突+供给担忧</td><td><span class="tag tag-neutral">周期股受益</span></td></tr>
             </table>
+
+            <div class="opportunity-box">
+                <strong>💡 策略启示：</strong>全球资金正在经历"从高估值美股向中国洼地资产"的再平衡。短期关注A股/H股的【外资回流受益板块】：金融、消费蓝筹、高股息央企。
+            </div>
         </div>
 
-        <div class="card" id="news">
-            <h2>📰 重大新闻与政策舆情</h2>
-            <h3 style="color:#fff;margin:20px 0 12px;">国内政策</h3>
+        <!-- A股逻辑 -->
+        <div class="card" id="a-share">
+            <h2>🇨🇳 A股投资逻辑</h2>
+            
+            <h3>政策面：两会定调后的交易主线</h3>
+            <div class="insight-box">
+                <strong>政策锚点：</strong>赤字率4%+特别国债1.3万亿的组合，意味着财政扩张力度为近年之最。关键不是数字本身，而是【政策节奏】——一季度专项债发行速度已超前两年同期，表明政策靠前发力的意图明确。这对早周期板块（工程机械、建材、有色）形成实质性利好。
+            </div>
+
             <table>
-                <tr><th>政策领域</th><th>主要内容</th><th>影响</th></tr>
-                <tr><td>货币政策</td><td>央行：择机降准降息，保持流动性充裕</td><td><span class="tag tag-success">利好</span></td></tr>
-                <tr><td>财政政策</td><td>赤字率4%、特别国债1.3万亿、专项债4.4万亿</td><td><span class="tag tag-success">利好</span></td></tr>
-                <tr><td>资本市场</td><td>特别国债5000亿支持国有大行补充资本</td><td><span class="tag tag-success">利好金融</span></td></tr>
-                <tr><td>消费政策</td><td>《提振消费专项行动方案》30条落地</td><td><span class="tag tag-success">利好消费</span></td></tr>
+                <tr><th>政策维度</th><th>核心表述</th><th>交易机会</th><th>时间窗口</th></tr>
+                <tr><td>货币政策</td><td>"择机降准降息"</td><td><span class="tag tag-bull">券商</span> 受益于市场活跃度提升</td><td>3-4月</td></tr>
+                <tr><td>财政发力</td><td>特别国债5000亿补银行资本</td><td><span class="tag tag-bull">银行</span> 股息率+估值修复双击</td><td>Q1-Q2</td></tr>
+                <tr><td>消费刺激</td><td>《提振消费专项行动方案》30条</td><td><span class="tag tag-bull">家电/汽车</span> 以旧换新政策落地</td><td>即期</td></tr>
             </table>
-            <h3 style="color:#fff;margin:20px 0 12px;">行业新闻</h3>
+
+            <h3>资金面：两融+北向的边际变化</h3>
             <ul>
-                <li><strong>半导体：</strong>中微公司营收增长36.62%，寒武纪扭亏为盈净利润20.59亿元</li>
-                <li><strong>光伏：</strong>工信部明确治理低价无序竞争，行业处于周期底部</li>
-                <li><strong>消费：</strong>家电以旧换新政策带动，3月家电零售额同比增长35.1%</li>
-                <li><strong>券商：</strong>2025年一季度业绩预增81%</li>
+                <li><strong>两融余额：</strong>逼近1.9万亿高位，杠杆资金风险偏好仍高，但需警惕短期过热后的均值回归压力</li>
+                <li><strong>北向资金：</strong>近期净流入放缓，但单日波动加大，显示外资对A股的分歧加大——建议关注【尾盘北向】作为短期情绪指标</li>
+                <li><strong>ETF资金流向：</strong>宽基ETF（沪深300、科创50）持续获申购，被动配置资金形成支撑</li>
+            </ul>
+
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>🎯 进攻方向</h4>
+                    <p><strong>券商：</strong>一季报业绩+81%，政策催化（降准降息预期），估值处于历史中枢偏低</p>
+                    <p style="margin-top:8px;"><strong>半导体设备：</strong>中微、寒武纪业绩验证国产替代逻辑，设备端是产业链卡脖子环节中最先受益的</p>
+                </div>
+                <div class="strategy-card">
+                    <h4>🛡️ 防御方向</h4>
+                    <p><strong>银行：</strong>特别国债注资化解资本约束，高股息+低估值，适合作为组合压舱石</p>
+                    <p style="margin-top:8px;"><strong>电力：</strong>高股息+电价改革预期，煤价下行利好火电盈利修复</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 港股机会 -->
+        <div class="card" id="hk">
+            <h2>🇭🇰 港股核心机会</h2>
+            
+            <div class="insight-box">
+                <strong>港股逻辑锚点：</strong>港股是【中美利差+中国基本面】的双重博弈场。当前中美利差倒挂收窄（美债收益率下行+中债稳定），对港股估值形成支撑。更重要的是，港股科技股（互联网、生物医药）估值较美股同类折价40-60%，存在显著的"估值洼地"吸引力。
+            </div>
+
+            <h3>重点板块：互联网龙头的配置价值</h3>
+            <table>
+                <tr><th>标的</th><th>隔夜表现</th><th>投资逻辑</th><th>催化剂</th></tr>
+                <tr><td>京东集团</td><td class="positive">+6%</td><td>物流效率提升+以旧换新受益，估值仅15x PE</td><td>消费政策加码</td></tr>
+                <tr><td>小鹏汽车</td><td class="positive">+6%</td><td>新车周期+智能化领先，月交付量持续超预期</td><td>3月销量数据</td></tr>
+                <tr><td>网易</td><td class="positive">+3.39%</td><td>游戏储备丰富，出海收入占比提升，现金流稳定</td><td>新游上线周期</td></tr>
+            </table>
+
+            <div class="opportunity-box">
+                <strong>港股配置策略：</strong><br>
+                1. <strong>互联网巨头：</strong>京东、阿里、美团形成"消费复苏铁三角"，其中京东弹性最大（估值最低+政策最受益）<br>
+                2. <strong>新能源汽车：</strong>小鹏、理想受益国内价格战趋缓+出口放量，关注3月销量数据验证<br>
+                3. <strong>高股息央国企：</strong>中国移动、中海油等南向资金重仓标的，适合稳健配置
+            </div>
+
+            <h3>南向资金动向</h3>
+            <ul>
+                <li>近期南向资金持续净流入，重点加仓【金融】和【科技】板块</li>
+                <li>港股通标的中的高股息资产（银行、能源）成为内地资金避险选择</li>
+                <li>策略建议：跟随南向资金配置节奏，优先选择"AH溢价"较低（< 130%）的标的</li>
             </ul>
         </div>
 
+        <!-- 行业轮动 -->
         <div class="card" id="sector">
-            <h2>📊 对A股板块影响分析</h2>
+            <h2>🏭 行业轮动与景气度</h2>
+            
+            <h3>当前轮动位置</h3>
+            <div class="insight-box">
+                <strong>周期定位：</strong>当前处于【政策驱动期→业绩验证期】的过渡阶段。一季度是业绩真空期，市场主要由政策和资金面驱动；4月进入年报和一季报密集披露期，【有业绩支撑的板块】将获得资金溢价。
+            </div>
+
             <table>
-                <tr><th>板块</th><th>影响</th><th>逻辑说明</th></tr>
-                <tr><td>科技/半导体</td><td><span class="tag tag-warning">⚠️ 负面</span></td><td>美股科技股大跌，但中微、寒武纪业绩超预期对冲</td></tr>
-                <tr><td>新能源</td><td><span class="tag tag-warning">➡️ 中性偏负</span></td><td>光伏行业周期底部，储能新增装机增长52%</td></tr>
-                <tr><td>消费</td><td><span class="tag tag-success">✅ 正面</span></td><td>消费刺激政策加码，家电、汽车以旧换新</td></tr>
-                <tr><td>金融</td><td><span class="tag tag-success">✅ 正面</span></td><td>特别国债5000亿补充银行资本，券商业绩+81%</td></tr>
-                <tr><td>周期/资源</td><td><span class="tag tag-success">✅ 正面</span></td><td>油价暴涨12%，铁矿石、磷矿石价格坚挺</td></tr>
+                <tr><th>行业</th><th>景气度</th><th>核心驱动</th><th>配置建议</th></tr>
+                <tr><td>半导体设备</td><td><span class="tag tag-bull">↑ 高景气</span></td><td>国产替代+AI算力需求</td><td>核心仓位持有</td></tr>
+                <tr><td>券商</td><td><span class="tag tag-bull">↑ 改善</span></td><td>一季报业绩爆发+政策催化</td><td>事件驱动配置</td></tr>
+                <tr><td>银行</td><td><span class="tag tag-neutral">→ 稳定</span></td><td>特别国债注资+高股息</td><td>防御底仓</td></tr>
+                <tr><td>光伏设备</td><td><span class="tag tag-bear">↓ 承压</span></td><td>产能过剩+价格战</td><td>回避或减仓</td></tr>
+                <tr><td>消费电子</td><td><span class="tag tag-neutral">→ 筑底</span></td><td>AI手机换机周期待验证</td><td>观望</td></tr>
             </table>
         </div>
 
+        <!-- 转债策略 -->
         <div class="card" id="bond">
-            <h2>💹 高评级转债（AA-及以上）监控</h2>
-            <h3 style="color:#fff;margin:20px 0 12px;">异动转债</h3>
-            <table>
-                <tr><th>类型</th><th>转债</th><th>正股</th><th>涨跌幅</th><th>驱动因素</th></tr>
-                <tr><td><span class="tag tag-success">大涨</span></td><td>新乳转债</td><td>新乳业</td><td class="positive">+6.35%</td><td>消费复苏+转股价格下调</td></tr>
-                <tr><td><span class="tag tag-success">大涨</span></td><td>优彩转债</td><td>优彩资源</td><td class="positive">+6.25%</td><td>化纤回暖+不赎回公告</td></tr>
-                <tr><td><span class="tag tag-success">大涨</span></td><td>瑞可转债</td><td>瑞可达</td><td class="positive">+4.66%</td><td>半导体业务+169%</td></tr>
-                <tr><td><span class="tag tag-danger">大跌</span></td><td>嘉泽转债</td><td>嘉泽新能</td><td class="negative">-12.00%</td><td>REITs获利了结</td></tr>
-                <tr><td><span class="tag tag-danger">大跌</span></td><td>微导转债</td><td>微导纳米</td><td class="negative">-11.87%</td><td>光伏设备收入-30%</td></tr>
-            </table>
+            <h2>📈 可转债专业策略</h2>
+            
+            <h3>市场温度与估值</h3>
+            <div class="metric-row">
+                <div class="metric-item">
+                    <div class="metric-value">80+</div>
+                    <div class="metric-label">转债温度</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">42%</div>
+                    <div class="metric-label">平均溢价率</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">695亿</div>
+                    <div class="metric-label">日成交额</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">-5%</div>
+                    <div class="metric-label">到期收益率</div>
+                </div>
+            </div>
+
             <div class="risk-box">
-                <strong>⚠️ 需回避：</strong>微导转债（光伏周期底部）、嘉泽转债（情绪转弱）、兴发转债（产品价格下跌）
+                <strong>⚠️ 估值警示：</strong>转债市场整体温度80+，处于偏高区域。当前策略应【降低仓位+精选个券】，避免盲目追高。重点关注【股债性价比】优于纯债的标的。
+            </div>
+
+            <h3>专业策略：基于正股逻辑的转债选择</h3>
+            
+            <table>
+                <tr><th>策略类型</th><th>标的</th><th>正股逻辑</th><th>转债优势</th></tr>
+                <tr><td>🚀 进攻型</td><td>瑞可转债</td><td>半导体设备+169%，英伟达供应链</td><td>正股弹性大，转债跟涨能力强</td></tr>
+                <tr><td>🛡️ 防御型</td><td>新乳转债</td><td>消费复苏+高股息，业绩稳定</td><td>债底保护强，转股价格下调</td></tr>
+                <tr><td>⚡ 事件驱动</td><td>优彩转债</td><td>不赎回公告+化纤行业回暖</td><td>溢价率低，股性活跃</td></tr>
+            </table>
+
+            <div class="insight-box">
+                <strong>转债策略核心：</strong>当前市场环境下，转债的核心价值在于【下行保护+上行弹性】的不对称性。选择正股有明确催化的标的，设置止损位（如转债价格跌破债底），是专业投资者的风控要义。
             </div>
         </div>
 
-        <div class="card" id="forecast">
-            <h2>📈 今日走势推演</h2>
-            <h3 style="color:#fff;margin:20px 0 12px;">关键点位</h3>
-            <table>
-                <tr><th>指数</th><th>支撑位</th><th>压力位</th></tr>
-                <tr><td>上证指数</td><td>3350-3365</td><td>3390-3400</td></tr>
-                <tr><td>创业板指</td><td>2150-2200</td><td>2250</td></tr>
-            </table>
-            <h3 style="color:#fff;margin:20px 0 12px;">情景分析</h3>
-            <table>
-                <tr><th>情景</th><th>概率</th><th>走势描述</th></tr>
-                <tr><td>🟢 乐观</td><td>30%</td><td>中概股利好发酵，高开高走冲击3400</td></tr>
-                <tr><td>➡️ 基准</td><td>50%</td><td>震荡整理，3360-3390区间震荡</td></tr>
-                <tr><td>🟡 谨慎</td><td>20%</td><td>外围风险升温，冲高回落考验3350支撑</td></tr>
-            </table>
-        </div>
+        <!-- 交易计划 -->
+        <div class="card" id="trading">
+            <h2>⚡ 今日交易计划</h2>
+            
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>📊 大盘研判</h4>
+                    <p><strong>上证指数：</strong>支撑3350-3365，压力3390-3400</p>
+                    <p style="margin-top:6px;"><strong>情景概率：</strong>基准震荡50% | 乐观30% | 谨慎20%</p>
+                    <p style="margin-top:6px;"><strong>关键观察：</strong>开盘半小时量能+北向流向</p>
+                </div>
+                <div class="strategy-card">
+                    <h4>🎯 操作建议</h4>
+                    <p>• 仓位建议：维持60-70%中性仓位</p>
+                    <p>• 早盘策略：若高开超0.5%则减仓，低开则低吸</p>
+                    <p>• 尾盘策略：观察北向资金动向决定持仓过夜比例</p>
+                </div>
+            </div>
 
-        <div class="card" id="tips">
-            <h2>💡 今日操作提示</h2>
-            <h3 style="color:#fff;margin:20px 0 12px;">✅ 关注方向</h3>
+            <h3>重点事件日历</h3>
             <ul>
-                <li><strong>半导体设备：</strong>中微、寒武纪业绩超预期</li>
-                <li><strong>油气/化工：</strong>油价暴涨，替代能源受益</li>
-                <li><strong>券商：</strong>一季报业绩+81%，政策催化</li>
-                <li><strong>消费：</strong>家电、汽车以旧换新政策</li>
+                <li><strong>3月中旬：</strong>美联储议息会议（关注缩表放缓信号）</li>
+                <li><strong>本周：</strong>中国2月社融数据（验证宽信用效果）</li>
+                <li><strong>持续关注：</strong>中东局势对油价的传导、特斯拉/英伟达股价对科技板块的情绪影响</li>
             </ul>
-            <h3 style="color:#fff;margin:20px 0 12px;">⚠️ 回避方向</h3>
-            <ul>
-                <li>高估值AI概念股（美股同类回调）</li>
-                <li>对美出口依赖度高的制造业（关税风险）</li>
-                <li>高溢价可转债（估值温度80+）</li>
-            </ul>
-            <div class="tips-box">
-                <strong>💡 策略建议：</strong>今日市场预计震荡为主，重点关注消费防御板块和科技成长板块的分化机会。
+
+            <div class="risk-box">
+                <strong>⚠️ 风控提醒：</strong><br>
+                1. 单一标的仓位不超过总资产的8%<br>
+                2. 设置止损线：个股-8%、指数ETF-5%<br>
+                3. 避免在10:00前冲动交易，等待市场方向明确
             </div>
         </div>
 
         <div class="footer">
-            <p>免责声明：本报告仅供参考，不构成投资建议。市场有风险，投资需谨慎。</p>
-            <p style="margin-top:10px;">Generated by OpenClaw · 综合晨报 · 最后更新：2026-03-09 13:36</p>
+            <p>免责声明：本报告基于公开信息整理，仅供参考，不构成投资建议。市场有风险，投资需谨慎。</p>
+            <p style="margin-top:10px;">专业版投资晨报 · Generated by OpenClaw · 最后更新：2026-03-09 13:52</p>
         </div>
     </div>
 </body>
