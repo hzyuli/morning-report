@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>每日A股晨报 - 2026年3月9日</title>
+    <title>每日A股综合晨报 - 2026年3月9日</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -12,8 +12,9 @@
             min-height: 100vh;
             padding: 20px;
             color: #e0e0e0;
+            line-height: 1.6;
         }
-        .container { max-width: 900px; margin: 0 auto; }
+        .container { max-width: 1000px; margin: 0 auto; }
         .header {
             text-align: center;
             padding: 40px 20px;
@@ -27,8 +28,24 @@
             background: linear-gradient(90deg, #00d2ff, #3a7bd5);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
         }
-        .header .date { color: #888; font-size: 16px; margin-top: 10px; }
+        .header .date { color: #888; font-size: 16px; }
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .nav a {
+            color: #00d2ff;
+            text-decoration: none;
+            padding: 8px 16px;
+            background: rgba(0,210,255,0.1);
+            border-radius: 8px;
+            font-size: 14px;
+        }
         .card {
             background: rgba(255,255,255,0.05);
             border-radius: 16px;
@@ -66,6 +83,7 @@
             padding: 4px 10px;
             border-radius: 4px;
             font-size: 12px;
+            margin-right: 5px;
         }
         .tag-success { background: rgba(0,230,118,0.2); color: #00e676; }
         .tag-warning { background: rgba(255,215,64,0.2); color: #ffd740; }
@@ -77,70 +95,105 @@
             margin: 15px 0;
             border-radius: 0 8px 8px 0;
         }
+        .risk-box {
+            background: rgba(255,82,82,0.1);
+            border-left: 4px solid #ff5252;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
         .footer {
             text-align: center;
             padding: 30px;
             color: #666;
             font-size: 13px;
         }
+        ul { margin: 10px 0 10px 20px; }
+        li { margin: 8px 0; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>📊 A股盘前晨报</h1>
-            <div class="date">2026年3月9日（周一）</div>
+            <h1>📊 每日A股综合晨报</h1>
+            <div class="date">2026年3月9日 | 更新时间：13:25</div>
         </div>
 
-        <div class="card">
+        <div class="nav">
+            <a href="#market">🌍 国际市场</a>
+            <a href="#news">📰 政策新闻</a>
+            <a href="#sector">📊 板块影响</a>
+            <a href="#bond">💹 转债监控</a>
+            <a href="#forecast">📈 走势推演</a>
+            <a href="#tips">💡 操作提示</a>
+        </div>
+
+        <div class="card" id="market">
             <h2>🌍 隔夜国际市场表现</h2>
-            <h3 style="color:#fff;margin:20px 0 12px;">美股市场</h3>
             <table>
-                <tr><th>指数</th><th>收盘点位</th><th>涨跌幅</th><th>本周累计</th></tr>
-                <tr><td>道琼斯工业指数</td><td>47,501.55</td><td class="negative">-0.95%</td><td class="negative">-3.01%</td></tr>
-                <tr><td>标普500指数</td><td>6,740.02</td><td class="negative">-1.33%</td><td class="negative">-2.02%</td></tr>
-                <tr><td>纳斯达克综合指数</td><td>22,387.68</td><td class="negative">-1.59%</td><td class="negative">-1.24%</td></tr>
+                <tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr>
+                <tr><td>道琼斯</td><td>47,501.55</td><td class="negative">-0.95%</td></tr>
+                <tr><td>标普500</td><td>6,740.02</td><td class="negative">-1.33%</td></tr>
+                <tr><td>纳斯达克</td><td>22,387.68</td><td class="negative">-1.59%</td></tr>
             </table>
-            <div class="highlight-box">
-                <strong>市场要点：</strong>大型科技股普跌，英伟达跌3%、苹果跌1.1%，VIX恐慌指数收于29点以上
-            </div>
-            
-            <h3 style="color:#fff;margin:20px 0 12px;">中概股表现</h3>
-            <table>
-                <tr><th>指数</th><th>表现</th></tr>
-                <tr><td>纳斯达克中国金龙指数</td><td class="positive">+0.69%</td></tr>
-                <tr><td>万得中概科技龙头指数</td><td class="positive">+1.78%</td></tr>
-            </table>
-            <p style="margin-top:15px;"><strong>热门中概股：</strong>京东<span class="positive">+6%</span>、小鹏<span class="positive">+6%</span>、万国数据<span class="positive">+7%</span></p>
+            <div class="highlight-box"><strong>市场要点：</strong>VIX恐慌指数收于29点以上，创去年4月以来新高。中概股逆势上涨，金龙指数+0.69%，京东+6%、小鹏+6%</div>
         </div>
 
-        <div class="card">
+        <div class="card" id="news">
             <h2>📰 重大政策舆情</h2>
             <table>
                 <tr><th>政策</th><th>内容</th><th>影响</th></tr>
-                <tr><td>货币政策</td><td>央行：择机降准降息，保持流动性充裕</td><td><span class="tag tag-success">利好</span></td></tr>
-                <tr><td>财政政策</td><td>赤字率4%、特别国债1.3万亿、专项债4.4万亿</td><td><span class="tag tag-success">利好</span></td></tr>
-                <tr><td>资本市场</td><td>特别国债5000亿支持国有大行补充资本</td><td><span class="tag tag-success">利好金融</span></td></tr>
-                <tr><td>消费政策</td><td>《提振消费专项行动方案》30条落地</td><td><span class="tag tag-success">利好消费</span></td></tr>
+                <tr><td>货币政策</td><td>择机降准降息</td><td><span class="tag tag-success">利好</span></td></tr>
+                <tr><td>财政政策</td><td>赤字率4%、特别国债1.3万亿</td><td><span class="tag tag-success">利好</span></td></tr>
+                <tr><td>消费政策</td><td>《提振消费专项行动方案》30条</td><td><span class="tag tag-success">利好消费</span></td></tr>
             </table>
         </div>
 
-        <div class="card">
-            <h2>💹 高评级转债监控</h2>
-            <h3 style="color:#fff;margin:20px 0 12px;">异动转债</h3>
+        <div class="card" id="sector">
+            <h2>📊 板块影响分析</h2>
             <table>
-                <tr><th>类型</th><th>转债</th><th>正股</th><th>涨跌幅</th><th>驱动因素</th></tr>
-                <tr><td><span class="tag tag-success">大涨</span></td><td>新乳转债</td><td>新乳业</td><td class="positive">+6.35%</td><td>消费复苏+转股价格下调</td></tr>
-                <tr><td><span class="tag tag-success">大涨</span></td><td>优彩转债</td><td>优彩资源</td><td class="positive">+6.25%</td><td>化纤回暖+不赎回</td></tr>
-                <tr><td><span class="tag tag-success">大涨</span></td><td>瑞可转债</td><td>瑞可达</td><td class="positive">+4.66%</td><td>半导体业务+169%</td></tr>
-                <tr><td><span class="tag tag-danger">大跌</span></td><td>嘉泽转债</td><td>嘉泽新能</td><td class="negative">-12.00%</td><td>REITs获利了结</td></tr>
-                <tr><td><span class="tag tag-danger">大跌</span></td><td>微导转债</td><td>微导纳米</td><td class="negative">-11.87%</td><td>光伏设备收入-30%</td></tr>
+                <tr><th>板块</th><th>影响</th><th>逻辑</th></tr>
+                <tr><td>科技/半导体</td><td><span class="tag tag-warning">⚠️ 负面</span></td><td>美股科技股大跌</td></tr>
+                <tr><td>消费</td><td><span class="tag tag-success">✅ 正面</span></td><td>消费刺激政策加码</td></tr>
+                <tr><td>金融</td><td><span class="tag tag-success">✅ 正面</span></td><td>特别国债5000亿补充银行资本</td></tr>
+                <tr><td>周期/资源</td><td><span class="tag tag-success">✅ 正面</span></td><td>油价暴涨12%</td></tr>
             </table>
+        </div>
+
+        <div class="card" id="bond">
+            <h2>💹 高评级转债监控</h2>
+            <table>
+                <tr><th>转债</th><th>正股</th><th>涨跌幅</th><th>因素</th></tr>
+                <tr><td>新乳转债</td><td>新乳业</td><td class="positive">+6.35%</td><td>消费复苏</td></tr>
+                <tr><td>优彩转债</td><td>优彩资源</td><td class="positive">+6.25%</td><td>化纤回暖</td></tr>
+                <tr><td>瑞可转债</td><td>瑞可达</td><td class="positive">+4.66%</td><td>半导体+169%</td></tr>
+                <tr><td>嘉泽转债</td><td>嘉泽新能</td><td class="negative">-12.00%</td><td>REITs获利了结</td></tr>
+                <tr><td>微导转债</td><td>微导纳米</td><td class="negative">-11.87%</td><td>光伏收入-30%</td></tr>
+            </table>
+            <div class="risk-box"><strong>⚠️ 回避：</strong>微导转债（光伏周期底部）、嘉泽转债（情绪转弱）、兴发转债（产品价格下跌）</div>
+        </div>
+
+        <div class="card" id="forecast">
+            <h2>📈 走势推演</h2>
+            <table>
+                <tr><th>情景</th><th>概率</th><th>描述</th></tr>
+                <tr><td>🟢 乐观</td><td>30%</td><td>高开高走冲击3400</td></tr>
+                <tr><td>➡️ 基准</td><td>50%</td><td>3360-3390区间震荡</td></tr>
+                <tr><td>🟡 谨慎</td><td>20%</td><td>冲高回落考验3350</td></tr>
+            </table>
+        </div>
+
+        <div class="card" id="tips">
+            <h2>💡 操作提示</h2>
+            <ul>
+                <li><strong>关注：</strong>半导体设备、油气化工、券商、消费</li>
+                <li><strong>回避：</strong>高估值AI概念、出口依赖型制造、高溢价转债</li>
+            </ul>
         </div>
 
         <div class="footer">
             <p>免责声明：本报告仅供参考，不构成投资建议。市场有风险，投资需谨慎。</p>
-            <p style="margin-top:10px;">Generated by OpenClaw · 每日自动更新</p>
+            <p>Generated by OpenClaw · 综合晨报 · 2026-03-09</p>
         </div>
     </div>
 </body>
