@@ -1,1 +1,213 @@
-...
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专业版A股投资晨报 - 2026年03月09日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(30,58,138,0.4) 0%, rgba(59,130,246,0.2) 100%);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(59,130,246,0.3);
+            position: relative;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+        }
+        .header h1 {
+            font-size: 28px;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header .subtitle { color: #64748b; font-size: 14px; letter-spacing: 2px; }
+        .header .update-time { 
+            color: #38bdf8; font-size: 13px; margin-top: 15px;
+            padding: 6px 20px; background: rgba(56,189,248,0.15);
+            border: 1px solid rgba(56,189,248,0.3); border-radius: 20px;
+            display: inline-block;
+        }
+        .nav {
+            display: flex; justify-content: center; gap: 8px;
+            margin-bottom: 25px; flex-wrap: wrap;
+        }
+        .nav a {
+            color: #94a3b8; text-decoration: none;
+            padding: 8px 16px; background: rgba(30,41,59,0.6);
+            border: 1px solid rgba(71,85,105,0.5); border-radius: 8px;
+            font-size: 13px; transition: all 0.3s;
+        }
+        .nav a:hover { background: rgba(59,130,246,0.2); color: #60a5fa; }
+        .card {
+            background: rgba(30,41,59,0.5); border-radius: 12px;
+            padding: 24px; margin-bottom: 20px;
+            border: 1px solid rgba(71,85,105,0.4);
+        }
+        .card h2 {
+            font-size: 18px; color: #60a5fa; margin-bottom: 16px;
+            padding-bottom: 10px; border-bottom: 1px solid rgba(59,130,246,0.3);
+            display: flex; align-items: center; gap: 8px;
+        }
+        table {
+            width: 100%; border-collapse: collapse;
+            margin: 12px 0; font-size: 13px;
+        }
+        th {
+            background: rgba(59,130,246,0.15); color: #60a5fa;
+            padding: 10px; text-align: left; font-weight: 600;
+            font-size: 12px; text-transform: uppercase;
+        }
+        td { padding: 10px; border-bottom: 1px solid rgba(71,85,105,0.3); }
+        tr:hover td { background: rgba(59,130,246,0.05); }
+        .positive { color: #4ade80; font-weight: 600; }
+        .negative { color: #f87171; font-weight: 600; }
+        .tag {
+            display: inline-block; padding: 3px 10px;
+            border-radius: 4px; font-size: 11px; font-weight: 600;
+        }
+        .tag-bull { background: rgba(74,222,128,0.15); color: #4ade80; border: 1px solid rgba(74,222,128,0.3); }
+        .tag-bear { background: rgba(248,113,113,0.15); color: #f87171; border: 1px solid rgba(248,113,113,0.3); }
+        .metric-row {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 12px; margin: 16px 0;
+        }
+        .metric-item {
+            background: rgba(15,23,42,0.5); padding: 16px;
+            border-radius: 10px; text-align: center;
+            border: 1px solid rgba(71,85,105,0.3);
+        }
+        .metric-value { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+        .metric-label { font-size: 11px; color: #64748b; text-transform: uppercase; }
+        .insight-box {
+            background: linear-gradient(135deg, rgba(59,130,246,0.1) 0%, rgba(139,92,246,0.1) 100%);
+            border-left: 3px solid #8b5cf6; padding: 16px 20px;
+            margin: 16px 0; border-radius: 0 8px 8px 0; font-size: 14px;
+        }
+        .footer {
+            text-align: center; padding: 30px;
+            color: #475569; font-size: 12px;
+        }
+        @media (max-width: 768px) {
+            .metric-row { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 专业版A股投资晨报</h1>
+            <div class="subtitle">Professional Market Intelligence</div>
+            <div class="update-time">⏱️ 实时更新：2026-03-09 16:30 | 数据源：腾讯财经</div>
+        </div>
+
+        <div class="nav">
+            <a href="#market">📊 实时行情</a>
+            <a href="#technical">📈 技术位</a>
+            <a href="#a-share">🇨🇳 A股</a>
+            <a href="#hk">🇭🇰 港股</a>
+            <a href="#strategy">💡 策略</a>
+        </div>
+
+        <div class="card" id="market">
+            <h2>📊 实时市场行情</h2>
+            <div class="metric-row">
+                <div class="metric-item">
+                    <div class="metric-value negative">4096.60</div>
+                    <div class="metric-label">上证指数</div>
+                    <div style="font-size:12px;margin-top:4px;" class="negative">-0.67%</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">3208.58</div>
+                    <div class="metric-label">创业板指</div>
+                    <div style="font-size:12px;margin-top:4px;color:negative">-0.64%</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">25408.46</div>
+                    <div class="metric-label">恒生指数</div>
+                    <div style="font-size:12px;margin-top:4px;color:negative">-1.35%</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">4107/4053</div>
+                    <div class="metric-label">今日高/低</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="technical">
+            <h2>📈 关键技术位（基于实时数据计算）</h2>
+            <table>
+                <tr>
+                    <th>指数</th>
+                    <th>当前点位</th>
+                    <th>支撑位</th>
+                    <th>压力位</th>
+                    <th>日内波动</th>
+                </tr>
+                <tr>
+                    <td>上证指数</td>
+                    <td class="negative">4096.60</td>
+                    <td>4032-4044</td>
+                    <td>4115-4127</td>
+                    <td>1.32%</td>
+                </tr>
+            </table>
+            <div class="insight-box">
+                <strong>技术研判：</strong>基于今日高低点(4053-4107)计算，支撑位参考今日低点附近，压力位参考今日高点附近。若跌破支撑位4032，可能测试更低位置；突破压力位4115，有望打开上行空间。
+            </div>
+        </div>
+
+        <div class="card" id="a-share">
+            <h2>🇨🇳 A股投资逻辑</h2>
+            <table>
+                <tr><th>板块</th><th>影响</th><th>逻辑说明</th></tr>
+                <tr><td>科技/半导体</td><td><span class="tag tag-bear">⚠️ 负面</span></td><td>美股科技股回调压制情绪</td></tr>
+                <tr><td>消费</td><td><span class="tag tag-bull">✅ 正面</span></td><td>消费刺激政策加码</td></tr>
+                <tr><td>金融</td><td><span class="tag tag-bull">✅ 正面</span></td><td>特别国债补充银行资本</td></tr>
+                <tr><td>周期/资源</td><td><span class="tag tag-bull">✅ 正面</span></td><td>油价暴涨+基建发力</td></tr>
+            </table>
+        </div>
+
+        <div class="card" id="hk">
+            <h2>🇭🇰 港股核心机会</h2>
+            <p>港股今日表现：恒生指数 <span class="negative">-1.35%</span></p>
+            <ul style="margin-top:12px;">
+                <li><strong>互联网巨头：</strong>关注美团、阿里、京东的估值修复机会</li>
+                <li><strong>新能源：</strong>小鹏、理想受益于国内价格战趋缓</li>
+                <li><strong>高股息央国企：</strong>中国移动、中海油等南向资金重仓标的</li>
+            </ul>
+        </div>
+
+        <div class="card" id="strategy">
+            <h2>💡 今日交易策略</h2>
+            <table>
+                <tr><th>情景</th><th>概率</th><th>触发条件</th><th>应对策略</th></tr>
+                <tr><td>🟢 反弹</td><td>35%</td><td>守住4032且北向流入</td><td>加仓券商/科技</td></tr>
+                <tr><td>➡️ 震荡</td><td>45%</td><td>在4032-4044-4115-4127区间波动</td><td>高抛低吸，控制仓位</td></tr>
+                <tr><td>🟡 调整</td><td>20%</td><td>跌破4032且放量</td><td>减仓观望，防御为主</td></tr>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p>免责声明：本报告基于公开信息整理，仅供参考，不构成投资建议。市场有风险，投资需谨慎。</p>
+            <p>数据来源：东方财富/腾讯财经/新浪财经 | 更新时间：2026-03-09 16:30</p>
+        </div>
+    </div>
+</body>
+</html>
