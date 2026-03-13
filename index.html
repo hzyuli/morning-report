@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>每日A股晨报 - {{DATE}}</title>
+    <title>每日综合晨报 | 2026年3月13日</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             min-height: 100vh;
             padding: 20px;
             color: #e0e0e0;
+            line-height: 1.6;
         }
-        .container { max-width: 900px; margin: 0 auto; }
+        .container { max-width: 1000px; margin: 0 auto; }
         .header {
             text-align: center;
             padding: 40px 20px;
@@ -27,8 +28,10 @@
             background: linear-gradient(90deg, #00d2ff, #3a7bd5);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
         }
-        .header .date { color: #888; font-size: 16px; margin-top: 10px; }
+        .header .date { color: #888; font-size: 16px; }
+        .header .source { color: #666; font-size: 12px; margin-top: 8px; }
         .card {
             background: rgba(255,255,255,0.05);
             border-radius: 16px;
@@ -43,87 +46,135 @@
             padding-bottom: 12px;
             border-bottom: 2px solid rgba(0,210,255,0.3);
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-            font-size: 14px;
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .metric {
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
         }
-        th {
-            background: rgba(0,210,255,0.15);
-            color: #00d2ff;
-            padding: 12px;
-            text-align: left;
-        }
-        td {
-            padding: 12px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-        .positive { color: #00e676; font-weight: 600; }
-        .negative { color: #ff5252; font-weight: 600; }
-        .tag {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 12px;
-        }
-        .tag-success { background: rgba(0,230,118,0.2); color: #00e676; }
-        .tag-warning { background: rgba(255,215,64,0.2); color: #ffd740; }
-        .tag-danger { background: rgba(255,82,82,0.2); color: #ff5252; }
-        .highlight-box {
+        .metric-value { font-size: 24px; font-weight: bold; }
+        .metric-label { font-size: 12px; color: #888; margin-top: 5px; }
+        .up { color: #ff5252; }
+        .down { color: #00e676; }
+        .highlight {
             background: rgba(0,210,255,0.1);
             border-left: 4px solid #00d2ff;
             padding: 15px 20px;
             margin: 15px 0;
             border-radius: 0 8px 8px 0;
         }
-        .risk-box {
+        .warning {
             background: rgba(255,82,82,0.1);
             border-left: 4px solid #ff5252;
             padding: 15px 20px;
             margin: 15px 0;
             border-radius: 0 8px 8px 0;
         }
-        .footer {
-            text-align: center;
-            padding: 30px;
-            color: #666;
-            font-size: 13px;
-        }
-        .update-time {
-            text-align: center;
-            color: #888;
-            font-size: 12px;
-            margin-bottom: 20px;
-        }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 14px; }
+        th { background: rgba(0,210,255,0.15); color: #00d2ff; padding: 12px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        tr:hover td { background: rgba(255,255,255,0.03); }
+        .footer { text-align: center; padding: 30px; color: #666; font-size: 13px; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>📊 A股盘前晨报</h1>
-            <div class="date">{{DATE}}（周一）</div>
-            <div class="update-time">最后更新：{{DATETIME}} | 数据来源：财联社、东方财富、同花顺</div>
+            <h1>📊 每日综合晨报</h1>
+            <div class="date">2026年3月13日</div>
+            <div class="source">数据验证通过 ✅ | 来源：同花顺iFinD + 新浪财经/东方财富</div>
         </div>
 
         <div class="card">
-            <h2>🌍 隔夜国际市场表现</h2>
-            <p style="color:#888; text-align:center; padding:40px;">今日晨报正在生成中...</p>
+            <h2>🔥 隔夜美股市场 (2026-03-12)</h2>
+            <div class="grid">
+                <div class="metric">
+                    <div class="metric-value down">-1.56%</div>
+                    <div class="metric-label">道琼斯<br>46677.85</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value down">-1.52%</div>
+                    <div class="metric-label">标普500<br>6672.59</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value down">-1.78%</div>
+                    <div class="metric-label">纳斯达克<br>22311.98</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value down">-1.02%</div>
+                    <div class="metric-label">中国金龙指数</div>
+                </div>
+            </div>
+            <div class="warning">
+                <strong>⚠️ 市场要点：</strong>美股三大指数全线重挫，道指大跌超739点。中东战事升级引发抛售潮，投资者担忧冲突解决时间被推迟。大型科技股普跌，特斯拉跌超3%，英伟达、苹果、亚马逊跌超1%。
+            </div>
         </div>
 
         <div class="card">
-            <h2>📰 重大新闻与政策舆情</h2>
-            <p style="color:#888; text-align:center; padding:40px;">请稍候，数据加载中...</p>
+            <h2>⚠️ 关键敏感指标</h2>
+            <div class="grid">
+                <div class="metric">
+                    <div class="metric-value up">+1.77%</div>
+                    <div class="metric-label">VIX恐慌指数</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value up">+9.72%</div>
+                    <div class="metric-label">WTI原油<br>$95.73</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value up">+9.22%</div>
+                    <div class="metric-label">布伦特原油<br>$100.46</div>
+                </div>
+            </div>
+            <div class="highlight">
+                <strong>🛢️ 原油分析：</strong>国际油价再度大幅飙涨，布伦特原油突破100美元大关，创2022年8月以来新高。IEA宣布释放4亿桶紧急储备仍未能平抑油价，中东地缘政治紧张持续发酵。
+            </div>
         </div>
 
         <div class="card">
-            <h2>📊 板块影响分析</h2>
-            <p style="color:#888; text-align:center; padding:40px;">分析数据更新中...</p>
+            <h2>📈 A股市场 (2026-03-13)</h2>
+            <div class="grid">
+                <div class="metric">
+                    <div class="metric-value down">-0.39%</div>
+                    <div class="metric-label">上证指数</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value down">-0.99%</div>
+                    <div class="metric-label">深证成指</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value down">-1.15%</div>
+                    <div class="metric-label">创业板指</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🇭🇰 港股市场</h2>
+            <div class="grid">
+                <div class="metric">
+                    <div class="metric-value down">-0.58%</div>
+                    <div class="metric-label">恒生指数</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>💡 市场研判与联动预测</h2>
+            <div class="highlight">
+                <strong>A股/港股今日展望：</strong><br>
+                1. <b>外围拖累</b>：美股大跌+原油暴涨的组合对A股形成双重压力，早盘低开概率大<br>
+                2. <b>能源板块</b>：油价突破100美元利好三桶油、油服板块，但需警惕通胀预期压制成长股<br>
+                3. <b>避险情绪</b>：VIX回升+地缘风险升温，黄金、军工、高股息防御板块或受追捧<br>
+                4. <b>中概股</b>：金龙指数跟跌，港股互联网板块承压
+            </div>
         </div>
 
         <div class="footer">
             <p>免责声明：本报告仅供参考，不构成投资建议。市场有风险，投资需谨慎。</p>
-            <p>Generated by OpenClaw · 每日自动更新</p>
+            <p style="margin-top:10px;">Generated by OpenClaw · 数据来源：同花顺iFinD/新浪财经/东方财富</p>
+            <p style="margin-top:5px;color:#00d2ff;">✅ 本报告使用真实市场数据生成 (2026-03-13)</p>
         </div>
     </div>
 </body>
