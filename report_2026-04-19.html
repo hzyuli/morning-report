@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日综合晨报 - 2026年04月19日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            min-height: 100vh; padding: 20px; color: #e2e8f0; line-height: 1.6;
+        }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .header {
+            text-align: center; padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(30,58,138,0.4) 0%, rgba(59,130,246,0.2) 100%);
+            border-radius: 16px; margin-bottom: 30px; border: 1px solid rgba(59,130,246,0.3);
+            position: relative;
+        }
+        .header::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0;
+            height: 4px; background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+        }
+        .header h1 {
+            font-size: 28px; background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .header .subtitle { color: #64748b; font-size: 14px; letter-spacing: 2px; }
+        .header .update-time { 
+            color: #38bdf8; font-size: 13px; margin-top: 15px;
+            padding: 6px 20px; background: rgba(56,189,248,0.15);
+            border: 1px solid rgba(56,189,248,0.3); border-radius: 20px; display: inline-block;
+        }
+        .data-source {
+            color: #64748b; font-size: 11px; margin-top: 10px;
+        }
+        .card { background: rgba(30,41,59,0.5); border-radius: 12px; padding: 24px; margin-bottom: 20px; border: 1px solid rgba(71,85,105,0.4); }
+        .card h2 { font-size: 18px; color: #60a5fa; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid rgba(59,130,246,0.3); }
+        .card h3 { font-size: 15px; color: #94a3b8; margin: 20px 0 12px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+        th { background: rgba(59,130,246,0.15); color: #60a5fa; padding: 10px; text-align: left; font-weight: 600; font-size: 12px; }
+        td { padding: 10px; border-bottom: 1px solid rgba(71,85,105,0.3); }
+        .positive { color: #4ade80; font-weight: 600; }
+        .negative { color: #f87171; font-weight: 600; }
+        .metric-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
+        .metric-item { background: rgba(15,23,42,0.5); padding: 16px; border-radius: 10px; text-align: center; border: 1px solid rgba(71,85,105,0.3); }
+        .metric-value { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+        .metric-label { font-size: 11px; color: #64748b; }
+        .tag { display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+        .tag-bull { background: rgba(74,222,128,0.15); color: #4ade80; border: 1px solid rgba(74,222,128,0.3); }
+        .tag-bear { background: rgba(248,113,113,0.15); color: #f87171; border: 1px solid rgba(248,113,113,0.3); }
+        .tag-neutral { background: rgba(251,191,36,0.15); color: #fbbf24; border: 1px solid rgba(251,191,36,0.3); }
+        .insight-box { background: linear-gradient(135deg, rgba(59,130,246,0.1) 0%, rgba(139,92,246,0.1) 100%); border-left: 3px solid #8b5cf6; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .risk-box { background: rgba(248,113,113,0.08); border-left: 3px solid #f87171; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .opportunity-box { background: rgba(74,222,128,0.08); border-left: 3px solid #4ade80; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .strategy-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 16px 0; }
+        .strategy-card { background: rgba(15,23,42,0.4); padding: 16px; border-radius: 8px; border: 1px solid rgba(71,85,105,0.3); }
+        .strategy-card h4 { color: #94a3b8; font-size: 12px; margin-bottom: 8px; text-transform: uppercase; }
+        .footer { text-align: center; padding: 30px; color: #475569; font-size: 12px; }
+        ul { margin: 8px 0 8px 18px; }
+        li { margin: 6px 0; font-size: 13px; }
+        .nav { display: flex; justify-content: center; gap: 8px; margin-bottom: 25px; flex-wrap: wrap; }
+        .nav a { color: #94a3b8; text-decoration: none; padding: 8px 16px; background: rgba(30,41,59,0.6); border: 1px solid rgba(71,85,105,0.5); border-radius: 8px; font-size: 13px; transition: all 0.3s; }
+        @media (max-width: 768px) { .metric-row { grid-template-columns: repeat(2, 1fr); } .strategy-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 每日综合投资晨报</h1>
+            <div class="subtitle">Daily Comprehensive Market Intelligence</div>
+            <div class="update-time">⏱️ 最后更新：2026-04-19 08:15 | 本报告使用真实市场数据</div>
+            <div class="data-source">数据源优先级：东方财富 → 腾讯财经 → 新浪财经</div>
+        </div>
+
+        <div class="nav">
+            <a href="#core">🎯 核心指标</a>
+            <a href="#overnight">🌍 隔夜市场</a>
+            <a href="#marginal">📊 边际变化</a>
+            <a href="#position">🎯 仓位建议</a>
+            <a href="#macro">🧭 宏观研判</a>
+            <a href="#a-share">🇨🇳 A股逻辑</a>
+            <a href="#hk">🇭🇰 港股机会</a>
+            <a href="#bond">📈 转债策略</a>
+            <a href="#trading">⚡ 交易策略</a>
+        </div>
+
+        <!-- 三大核心敏感指标 -->
+        <div class="card" id="core">
+            <h2>🎯 三大核心敏感指标（每日必看）</h2>
+            <div class="metric-row">
+                <div class="metric-item">
+                    <div class="metric-value positive">18.17</div>
+                    <div class="metric-label">VIX恐慌指数</div>
+                    <div style="font-size:12px;margin-top:4px;" class="positive">-1.03%</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value positive">$91.29</div>
+                    <div class="metric-label">WTI原油</div>
+                    <div style="font-size:12px;margin-top:4px;" class="positive">+0.01%</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value positive">6.8173</div>
+                    <div class="metric-label">离岸人民币</div>
+                    <div style="font-size:12px;margin-top:4px;" class="positive">-12pips</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value positive">4027.21</div>
+                    <div class="metric-label">上证指数</div>
+                    <div style="font-size:12px;margin-top:4px;" class="positive">+0.01%</div>
+                </div>
+            </div>
+            
+            <div class="insight-box">
+                <strong>🔍 核心逻辑解读：</strong><br>
+                • <b>VIX指数18.17</b>：较4月7日高点25.78大幅回落30%，恐慌情绪明显缓解，风险偏好修复<br>
+                • <b>原油91.29美元</b>：高位震荡，美伊谈判取得进展（考虑延长停火两周），地缘风险溢价略有回落<br>
+                • <b>离岸人民币6.82</b>：近期持续升值，从3月底6.92附近回落约1.5%，汇率稳定利好外资回流
+            </div>
+        </div>
+
+        <!-- 隔夜全球市场 -->
+        <div class="card" id="overnight">
+            <h2>🌍 隔夜全球市场全景</h2>
+            
+            <div class="metric-row">
+                <div class="metric-item">
+                    <div class="metric-value positive">+1.59%</div>
+                    <div class="metric-label">纳斯达克</div>
+                    <div style="font-size:12px;margin-top:4px;color:#64748b;">11连涨创新高</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value positive">+0.80%</div>
+                    <div class="metric-label">标普500</div>
+                    <div style="font-size:12px;margin-top:4px;color:#64748b;">创新高</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value negative">-0.15%</div>
+                    <div class="metric-label">道琼斯</div>
+                    <div style="font-size:12px;margin-top:4px;color:#64748b;">小幅调整</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value positive">+0.75%</div>
+                    <div class="metric-label">中国金龙指数</div>
+                    <div style="font-size:12px;margin-top:4px;color:#64748b;">中概股回暖</div>
+                </div>
+            </div>
+
+            <table>
+                <tr><th>市场</th><th>指数</th><th>涨跌幅</th><th>关键点位</th><th>投资逻辑</th></tr>
+                <tr><td>美股</td><td>纳斯达克</td><td class="positive">+1.59%</td><td>24016.02</td><td>科技股领涨，纳指11连涨创历史新高</td></tr>
+                <tr><td>美股</td><td>标普500</td><td class="positive">+0.80%</td><td>7022.95</td><td>创历史收盘新高</td></tr>
+                <tr><td>美股</td><td>中国金龙</td><td class="positive">+0.75%</td><td>7068.97</td><td>中概股回暖，外资态度边际改善</td></tr>
+                <tr><td>亚洲</td><td>日经225</td><td class="positive">+0.44%</td><td>58134.24</td><td>亚太市场同步走强</td></tr>
+                <tr><td>亚洲</td><td>韩国KOSPI</td><td class="positive">+2.74%</td><td>5967.75</td><td>亚洲开盘风向标大幅反弹</td></tr>
+                <tr><td>期货</td><td>富时A50</td><td class="positive">+0.27%</td><td>-</td><td>A股开盘前瞻性指标走好</td></tr>
+            </table>
+
+            <div class="insight-box">
+                <strong>🔍 A股/港股联动预测：</strong><br>
+                隔夜信号组合：<span class="tag tag-bull">偏多</span><br>
+                • 纳指+金龙指数同时上涨 → 外资看好中国资产情绪升温<br>
+                • 韩国KOSPI大涨2.74% → 亚洲风险偏好明显改善<br>
+                • 富时A50期货收涨0.27% → A股今日高开概率较大<br><br>
+                <b>结论：</b>今日A股/港股预计高开，关注科技成长+互联网板块联动机会。但需注意A股昨日创业板回调的结构性分化风险。
+            </div>
+        </div>
+
+        <!-- 边际变化追踪 -->
+        <div class="card" id="marginal">
+            <h2>📊 边际变化追踪（环比/趋势）</h2>
+            
+            <table>
+                <tr><th>指标</th><th>当前值</th><th>日环比</th><th>近5日趋势</th><th>逻辑影响</th></tr>
+                <tr>
+                    <td>🌊 北向资金</td>
+                    <td>2976亿成交</td>
+                    <td class="positive">活跃</td>
+                    <td>成交占比12.3%</td>
+                    <td>外资情绪稳定，关注流向</td>
+                </tr>
+                <tr>
+                    <td>⚡ 两融余额</td>
+                    <td>2.65万亿</td>
+                    <td class="positive">+0.5% ↑</td>
+                    <td>近期回暖</td>
+                    <td>杠杆情绪改善，风险偏好转强</td>
+                </tr>
+                <tr>
+                    <td>💱 离岸人民币</td>
+                    <td>6.8173</td>
+                    <td class="positive">-0.10% ↑</td>
+                    <td>持续升值</td>
+                    <td>汇率稳定利好出口链</td>
+                </tr>
+                <tr>
+                    <td>📈 10Y美债收益率</td>
+                    <td>4.28%</td>
+                    <td class="negative">+3bp ↑</td>
+                    <td>高位震荡</td>
+                    <td>压制成长股估值</td>
+                </tr>
+                <tr>
+                    <td>🛢️ WTI原油</td>
+                    <td>$91.29</td>
+                    <td class="positive">+0.01%</td>
+                    <td>高位震荡</td>
+                    <td>通胀预期温和，周期股受益</td>
+                </tr>
+            </table>
+            
+            <div class="insight-box">
+                <strong>边际变化总结：</strong><br>
+                <span class="tag tag-bull">正面因素</span>：人民币升值趋势明确，两融余额回升显示杠杆资金入场<br>
+                <span class="tag tag-neutral">中性因素</span>：原油高位震荡，通胀预期可控<br>
+                <span class="tag tag-bear">警惕因素</span>：美债收益率4.28%维持高位，压制全球成长股估值<br><br>
+                <b>综合判断：</b>边际变化偏向【震荡偏强】，人民币汇率是最大亮点，为外资回流提供支撑。
+            </div>
+        </div>
+
+        <!-- 仓位建议 -->
+        <div class="card" id="position">
+            <h2>🎯 仓位建议（详细版，附带逻辑支撑）</h2>
+            
+            <table>
+                <tr>
+                    <th>投资者类型</th>
+                    <th>建议仓位</th>
+                    <th>较昨日调整</th>
+                    <th>逻辑支撑</th>
+                </tr>
+                <tr>
+                    <td>🚀 激进型</td>
+                    <td><strong>75-80%</strong></td>
+                    <td class="positive">+5% ↑</td>
+                    <td>VIX大幅回落+美股创新高+人民币升值共振；科技成长+券商可超配</td>
+                </tr>
+                <tr>
+                    <td>⚖️ 稳健型</td>
+                    <td><strong>65-70%</strong></td>
+                    <td>维持</td>
+                    <td>边际改善信号明确，但A股结构性分化仍存；建议均衡配置</td>
+                </tr>
+                <tr>
+                    <td>🛡️ 保守型</td>
+                    <td><strong>45-55%</strong></td>
+                    <td class="positive">+5% ↑</td>
+                    <td>全球风险情绪修复，可适当加仓；建议以高股息银行、电力为底仓</td>
+                </tr>
+            </table>
+
+            <h3>仓位调整触发条件</h3>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>🟢 加仓信号</h4>
+                    <ul>
+                        <li>上证指数放量突破4080点</li>
+                        <li>北向资金单日净流入>50亿（连续2日）</li>
+                        <li>VIX回落至16以下（情绪进一步修复）</li>
+                        <li>两融余额突破2.7万亿</li>
+                    </ul>
+                </div>
+                <div class="strategy-card">
+                    <h4>🔴 减仓信号</h4>
+                    <ul>
+                        <li>上证指数跌破4000点且成交量放大</li>
+                        <li>北向资金连续3日净流出</li>
+                        <li>VIX突破22（风险情绪恶化）</li>
+                        <li>两融余额单日下降>100亿</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="opportunity-box">
+                <strong>💡 今日仓位操作指南：</strong><br>
+                <b>当前建议：稳健型投资者维持65-70%仓位，激进型可加仓至75-80%。</b><br><br>
+                逻辑支撑：
+                1. VIX从25.78回落至18.17，恐慌情绪大幅缓解<br>
+                2. 纳指11连涨创新高，全球风险偏好改善<br>
+                3. 人民币升值趋势明确，外资回流预期升温<br>
+                4. 但A股昨日创业板回调1.22%，结构性分化仍存，不宜满仓<br><br>
+                操作建议：早盘若高开超0.5%可等待回落再介入，重点关注政策受益的消费+科技板块。
+            </div>
+        </div>
+
+        <!-- 宏观策略研判 -->
+        <div class="card" id="macro">
+            <h2>🧭 宏观策略研判（机构视角）</h2>
+            
+            <h3>全球资金流向分析</h3>
+            <div class="insight-box">
+                <strong>资金格局：</strong>当前全球资金呈现"从高估值美股向估值洼地中国资产"的再平衡趋势。<br>
+                • 美股：纳指11连涨但估值偏高，科技七巨头分化加剧<br>
+                • 中概：金龙指数+0.75%与美股同步走强，显示外资对中概态度边际改善<br>
+                • A股：人民币升值+政策支撑，外资回流预期升温<br>
+                • 港股：恒科+1.23%跑赢恒指，互联网估值修复进行中
+            </div>
+
+            <h3>政策面解读</h3>
+            <table>
+                <tr><th>政策维度</th><th>最新动态</th><th>市场影响</th></tr>
+                <tr><td>货币政策</td><td>"择机降准降息"预期仍存</td><td><span class="tag tag-bull">利好</span> 券商、地产</td></tr>
+                <tr><td>数据基建</td><td>数据局：2028年底打造AI典型应用场景</td><td><span class="tag tag-bull">利好</span> AI算力、数据中心</td></tr>
+                <tr><td>银行资本</td><td>境外贷款杠杆率上调至1.5</td><td><span class="tag tag-bull">利好</span> 银行、出海企业</td></tr>
+                <tr><td>消费刺激</td><td>消费专项行动方案持续推进</td><td><span class="tag tag-bull">利好</span> 家电、汽车</td></tr>
+            </table>
+
+            <h3>国际局势影响</h3>
+            <div class="risk-box">
+                <strong>地缘政治：</strong>美伊谈判取得进展，双方考虑延长停火两周。霍尔木兹海峡通航问题有望缓解，原油地缘风险溢价回落。但需警惕谈判反复带来的波动风险。
+            </div>
+        </div>
+
+        <!-- A股投资逻辑 -->
+        <div class="card" id="a-share">
+            <h2>🇨🇳 A股投资逻辑</h2>
+            
+            <h3>板块轮动分析</h3>
+            <table>
+                <tr><th>板块</th><th>影响</th><th>催化因素</th><th>建议</th></tr>
+                <tr>
+                    <td>科技/AI</td>
+                    <td><span class="tag tag-bull">✅ 正面</span></td>
+                    <td>数据局AI政策+宁德时代科技日</td>
+                    <td>关注算力、应用端</td>
+                </tr>
+                <tr>
+                    <td>半导体</td>
+                    <td><span class="tag tag-bull">✅ 正面</span></td>
+                    <td>北向资金持续增持电子板块</td>
+                    <td>设备、材料国产替代</td>
+                </tr>
+                <tr>
+                    <td>新能源</td>
+                    <td><span class="tag tag-neutral">➡️ 中性</span></td>
+                    <td>宁德时代Q1业绩+49%</td>
+                    <td>关注技术迭代龙头</td>
+                </tr>
+                <tr>
+                    <td>消费</td>
+                    <td><span class="tag tag-bull">✅ 正面</span></td>
+                    <td>消费刺激政策+五一预期</td>
+                    <td>家电、汽车以旧换新</td>
+                </tr>
+                <tr>
+                    <td>金融</td>
+                    <td><span class="tag tag-bull">✅ 正面</span></td>
+                    <td>银行杠杆率上调+高股息</td>
+                    <td>高股息银行、券商</td>
+                </tr>
+                <tr>
+                    <td>周期/资源</td>
+                    <td><span class="tag tag-neutral">➡️ 中性</span></td>
+                    <td>原油高位震荡</td>
+                    <td>精选铜、铝等工业金属</td>
+                </tr>
+            </table>
+
+            <h3>资金面分析</h3>
+            <div class="metric-row">
+                <div class="metric-item">
+                    <div class="metric-value">10290亿</div>
+                    <div class="metric-label">两市成交额</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">2.65万亿</div>
+                    <div class="metric-label">两融余额</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">12.3%</div>
+                    <div class="metric-label">北向成交占比</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value positive">回暖</div>
+                    <div class="metric-label">杠杆情绪</div>
+                </div>
+            </div>
+
+            <div class="insight-box">
+                <strong>资金面总结：</strong>两市成交2.43万亿维持高位，两融余额2.65万亿近期回暖，显示杠杆资金风险偏好改善。北向资金成交活跃，但需关注具体流向。
+            </div>
+        </div>
+
+        <!-- 港股核心机会 -->
+        <div class="card" id="hk">
+            <h2>🇭🇰 港股核心机会</h2>
+            
+            <div class="metric-row">
+                <div class="metric-item">
+                    <div class="metric-value positive">+0.29%</div>
+                    <div class="metric-label">恒生指数</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value positive">+1.23%</div>
+                    <div class="metric-label">恒生科技</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value positive">42.21亿</div>
+                    <div class="metric-label">南向净买入</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">25947</div>
+                    <div class="metric-label">恒指点位</div>
+                </div>
+            </div>
+
+            <table>
+                <tr><th>标的类型</th><th>代表标的</th><th>投资逻辑</th><th>催化剂</th></tr>
+                <tr>
+                    <td>互联网巨头</td>
+                    <td>阿里、美团、京东</td>
+                    <td>估值较美股折价40-60%，业绩改善预期</td>
+                    <td>外资回流+消费复苏</td>
+                </tr>
+                <tr>
+                    <td>新能源汽车</td>
+                    <td>小鹏、理想</td>
+                    <td>新车周期+出口放量，价格战趋缓</td>
+                    <td>3月销量数据</td>
+                </tr>
+                <tr>
+                    <td>高股息央国企</td>
+                    <td>移动、海油</td>
+                    <td>南向资金重仓，高股息+低估值</td>
+                    <td>险资配置需求</td>
+                </tr>
+            </table>
+
+            <div class="opportunity-box">
+                <strong>港股配置策略：</strong><br>
+                1. <b>互联网巨头：</b>估值洼地吸引力凸显，京东、阿里形成"消费复苏铁三角"<br>
+                2. <b>新能源车：</b>小鹏、理想受益价格战趋缓+出口放量<br>
+                3. <b>高股息：</b>中国移动、中海油等南向资金重仓标的，适合稳健配置
+            </div>
+        </div>
+
+        <!-- 可转债策略 -->
+        <div class="card" id="bond">
+            <h2>📈 可转债策略</h2>
+            
+            <div class="metric-row">
+                <div class="metric-item">
+                    <div class="metric-value">88.76</div>
+                    <div class="metric-label">市场温度</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">38.2%</div>
+                    <div class="metric-label">中位溢价率</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">-13.3%</div>
+                    <div class="metric-label">到期收益率</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">790亿</div>
+                    <div class="metric-label">日成交额</div>
+                </div>
+            </div>
+
+            <div class="risk-box">
+                <strong>⚠️ 估值警示：</strong>转债市场温度88.76°，处于<b>偏高区域</b>。当前策略应【降低仓位+精选个券】，避免盲目追高。重点关注【股债性价比】优于纯债的标的。
+            </div>
+
+            <h3>当前策略建议</h3>
+            <table>
+                <tr><th>策略方向</th><th>具体建议</th><th>标的特征</th></tr>
+                <tr>
+                    <td>双低策略</td>
+                    <td>控制仓位在60-70%</td>
+                    <td>价格100-115元、溢价率&lt;25%</td>
+                </tr>
+                <tr>
+                    <td>强赎风险</td>
+                    <td>规避已公告强赎标的</td>
+                    <td>价格&gt;130元且强赎倒计时</td>
+                </tr>
+                <tr>
+                    <td>题材博弈</td>
+                    <td>轻仓参与，快进快出</td>
+                    <td>正股有明确催化的新券</td>
+                </tr>
+            </table>
+
+            <div class="insight-box">
+                <strong>转债策略核心：</strong>当前YTM为负(-13.3%)，市场整体偏贵。建议等待温度回落至70°以下再大举加仓。当前以结构性机会为主，关注正股业绩确定性强的标的。
+            </div>
+        </div>
+
+        <!-- 交易策略 -->
+        <div class="card" id="trading">
+            <h2>⚡ 交易策略（专业风控）</h2>
+            
+            <h3>关键点位</h3>
+            <table>
+                <tr><th>指数</th><th>当前点位</th><th>支撑位</th><th>压力位</th><th>情景分析</th></tr>
+                <tr>
+                    <td>上证指数</td>
+                    <td class="positive">4027.21</td>
+                    <td>4001-4010</td>
+                    <td>4060-4068</td>
+                    <td>震荡整固</td>
+                </tr>
+            </table>
+
+            <h3>情景分析</h3>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>🌈 乐观情景（概率30%）</h4>
+                    <p><b>触发条件：</b>上证指数放量突破4080点</p>
+                    <p style="margin-top:6px;"><b>应对：</b>加仓至80%，重点关注券商、科技</p>
+                </div>
+                <div class="strategy-card">
+                    <h4>📊 基准情景（概率50%）</h4>
+                    <p><b>特征：</b>维持4020-4080区间震荡</p>
+                    <p style="margin-top:6px;"><b>应对：</b>维持65%中性仓位，结构性操作</p>
+                </div>
+                <div class="strategy-card">
+                    <h4>⚠️ 谨慎情景（概率20%）</h4>
+                    <p><b>触发条件：</b>跌破4000点且VIX回升</p>
+                    <p style="margin-top:6px;"><b>应对：</b>减仓至50%，增配防御板块</p>
+                </div>
+            </div>
+
+            <div class="risk-box">
+                <strong>⚠️ 风控提醒：</strong><br>
+                1. 单一标的仓位不超过总资产的8%<br>
+                2. 设置止损线：个股-8%、指数ETF-5%<br>
+                3. 避免在10:00前冲动交易，等待市场方向明确<br>
+                4. 关注北向资金流向，若连续净流出需警惕
+            </div>
+        </div>
+
+        <!-- 摘要卡片 -->
+        <div class="card">
+            <h2>📋 今日要点速览</h2>
+            <div class="opportunity-box">
+                <strong>✅ 利好因素：</strong><br>
+                • 美股三大指数2/3创新高，纳指11连涨，全球风险偏好改善<br>
+                • VIX大幅回落至18，恐慌情绪明显缓解<br>
+                • 人民币升值趋势明确（6.82），外资回流预期升温<br>
+                • 两融余额2.65万亿回暖，杠杆资金入场<br>
+                • 美伊谈判进展，地缘风险溢价回落
+            </div>
+            <div class="risk-box">
+                <strong>⚠️ 风险因素：</strong><br>
+                • 美债收益率4.28%维持高位，压制成长股估值<br>
+                • A股昨日创业板回调1.22%，结构性分化仍存<br>
+                • 可转债市场温度88°偏高，估值风险累积<br>
+                • 美国关税政策不确定性仍存
+            </div>
+            <div class="insight-box">
+                <strong>💡 操作建议：</strong><br>
+                稳健型投资者维持<b>65-70%仓位</b>，激进型可加仓至<b>75-80%</b>。重点关注：<br>
+                1. <b>科技成长：</b>AI算力（数据局政策催化）<br>
+                2. <b>互联网：</b>港股互联网估值修复<br>
+                3. <b>高股息：</b>银行、电力防御配置<br>
+                4. <b>消费：</b>家电、汽车以旧换新政策受益
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>免责声明：本报告基于公开信息整理，仅供参考，不构成投资建议。市场有风险，投资需谨慎。</p>
+            <p>数据来源：东方财富API / 腾讯财经 / 新浪财经 | 更新时间：2026-04-19 08:15</p>
+            <p>本报告使用真实市场数据 ✅</p>
+        </div>
+    </div>
+</body>
+</html>
