@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日综合晨报 - 2026年4月24日</title>
+<style>
+  :root {
+    --bg: #0f172a; --card: #1e293b; --accent: #38bdf8;
+    --text: #f8fafc; --muted: #94a3b8; --up: #ef4444; --down: #22c55e;
+    --border: #334155; --warning: #f59e0b; --danger: #dc2626;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 40px;
+  }
+  .container { max-width: 960px; margin: 0 auto; padding: 20px; }
+  header { text-align: center; padding: 32px 0 24px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+  header h1 { font-size: 28px; font-weight: 700; letter-spacing: 1px; }
+  header .meta { color: var(--muted); font-size: 14px; margin-top: 8px; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+  .badge-up { background: rgba(239,68,68,0.15); color: var(--up); }
+  .badge-down { background: rgba(34,197,94,0.15); color: var(--down); }
+  .badge-flat { background: rgba(148,163,184,0.15); color: var(--muted); }
+  .badge-warning { background: rgba(245,158,11,0.15); color: var(--warning); }
+  .badge-danger { background: rgba(220,38,38,0.15); color: var(--danger); }
+  .section { background: var(--card); border-radius: 12px; padding: 24px; margin-bottom: 20px; border: 1px solid var(--border); }
+  .section-title { font-size: 18px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .section-title .icon { font-size: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  @media (max-width: 768px) { .grid-3, .grid-2 { grid-template-columns: 1fr; } }
+  .metric-card { background: rgba(255,255,255,0.03); border-radius: 8px; padding: 16px; text-align: center; }
+  .metric-card .name { color: var(--muted); font-size: 13px; margin-bottom: 6px; }
+  .metric-card .value { font-size: 24px; font-weight: 700; }
+  .metric-card .change { font-size: 13px; margin-top: 4px; }
+  .advice-box { border-radius: 10px; padding: 16px; margin-bottom: 12px; }
+  .advice-aggressive { background: rgba(220,38,38,0.1); border-left: 4px solid var(--danger); }
+  .advice-moderate { background: rgba(245,158,11,0.1); border-left: 4px solid var(--warning); }
+  .advice-conservative { background: rgba(34,197,94,0.1); border-left: 4px solid var(--down); }
+  .advice-box .label { font-weight: 700; font-size: 14px; margin-bottom: 6px; }
+  .advice-box p { font-size: 13px; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { padding: 10px 8px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+  .footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--border); }
+  .highlight { color: var(--accent); font-weight: 600; }
+  .summary-text { font-size: 14px; line-height: 1.8; }
+  .summary-text p { margin-bottom: 12px; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; background: rgba(56,189,248,0.1); color: var(--accent); margin-right: 6px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>每日综合晨报</h1>
+  <div class="meta">2026年4月24日（周五） | 数据来源：公开市场信息 | 仅供参考，不构成投资建议</div>
+</header>
+
+<!-- 市场概览 -->
+<div class="section">
+  <div class="section-title"><span class="icon">📊</span>市场概览</div>
+  <div class="grid-3">
+    <div class="metric-card">
+      <div class="name">上证指数</div>
+      <div class="value">4,093.25</div>
+      <div class="change"><span class="badge badge-down">-0.32%</span></div>
+    </div>
+    <div class="metric-card">
+      <div class="name">深证成指</div>
+      <div class="value">15,043.45</div>
+      <div class="change"><span class="badge badge-down">-0.88%</span></div>
+    </div>
+    <div class="metric-card">
+      <div class="name">创业板指</div>
+      <div class="value">3,720.25</div>
+      <div class="change"><span class="badge badge-down">-0.87%</span></div>
+    </div>
+  </div>
+  <div style="margin-top:16px; text-align:center; color:var(--muted); font-size:13px;">
+    A股成交 <span class="highlight">2.82万亿</span>，创近7周新高 | 全市场近 <span class="highlight">4100只</span> 个股下跌
+  </div>
+</div>
+
+<!-- 三大核心敏感指标 -->
+<div class="section">
+  <div class="section-title"><span class="icon">🎯</span>三大核心敏感指标</div>
+  <div class="grid-3">
+    <div class="metric-card">
+      <div class="name">VIX恐慌指数</div>
+      <div class="value" style="color:var(--warning);">19.31</div>
+      <div class="change"><span class="badge badge-up">+2.06%</span> 日环比</div>
+      <div style="margin-top:8px; font-size:11px; color:var(--muted);">交易区间 18.70~21.56 | 52周区间 13.38~35.30</div>
+    </div>
+    <div class="metric-card">
+      <div class="name">WTI原油价格</div>
+      <div class="value" style="color:var(--up);">~$62.50</div>
+      <div class="change"><span class="badge badge-flat">日内波动</span> 地缘+关税交织</div>
+      <div style="margin-top:8px; font-size:11px; color:var(--muted);">伊核谈判反复，特朗普关税政策多变，油价波动剧烈</div>
+    </div>
+    <div class="metric-card">
+      <div class="name">美元指数 DXY</div>
+      <div class="value" style="color:var(--up);">100.46</div>
+      <div class="change"><span class="badge badge-up">+0.53%</span> 日环比</div>
+      <div style="margin-top:8px; font-size:11px; color:var(--muted);">美元阶段性走强，压制新兴市场资产</div>
+    </div>
+  </div>
+  <div class="summary-text" style="margin-top:16px;">
+    <p><strong>逻辑支撑：</strong>VIX从3月底的31高位回落至19附近，显示恐慌情绪大幅消退，但仍未回到"舒适区"（<17为低风险）。油价在地缘（美伊谈判）和关税政策双重博弈下剧烈震荡，中期方向不明。美元指数从3月低位反弹至100上方，美联储维持"观望"姿态，6月前降息概率走低，美元阶段性偏强，对北向资金和人民币汇率构成压力。</p>
+  </div>
+</div>
+
+<!-- 隔夜美股 -->
+<div class="section">
+  <div class="section-title"><span class="icon">🇺🇸</span>隔夜美股 & 中概</div>
+  <div class="grid-3">
+    <div class="metric-card">
+      <div class="name">道琼斯</div>
+      <div class="value">49,310</div>
+      <div class="change"><span class="badge badge-down">-0.40%</span> 收跌179点</div>
+    </div>
+    <div class="metric-card">
+      <div class="name">纳斯达克</div>
+      <div class="value">24,438</div>
+      <div class="change"><span class="badge badge-down">-0.90%</span> 收跌219点</div>
+    </div>
+    <div class="metric-card">
+      <div class="name">标普500</div>
+      <div class="value">7,108</div>
+      <div class="change"><span class="badge badge-down">-0.40%</span> 收跌29点</div>
+    </div>
+  </div>
+  <div style="margin-top:16px; text-align:center; color:var(--muted); font-size:13px;">
+    美股全线回调，科技股领跌 | 中概股金龙指数：数据暂缺
+  </div>
+</div>
+
+<!-- 港股 -->
+<div class="section">
+  <div class="section-title"><span class="icon">🇭🇰</span>港股核心</div>
+  <div class="grid-2">
+    <div class="metric-card">
+      <div class="name">恒生指数</div>
+      <div class="value" style="color:var(--down);">25,915.20</div>
+      <div class="change"><span class="badge badge-down">-0.95%</span> 失守26,000点</div>
+    </div>
+    <div class="metric-card">
+      <div class="name">恒生科技指数</div>
+      <div class="value" style="color:var(--down);">4,865.52</div>
+      <div class="change"><span class="badge badge-down">-1.98%</span> 芯片股领跌</div>
+    </div>
+  </div>
+  <div class="summary-text" style="margin-top:16px;">
+    <p>港股三大股指低开加速走低，芯片股领跌（华虹半导体跌近6%，壁仞科技跌超7%），权重科技股走弱（小米跌近3%，美团、腾讯跌近2%）。石油股逆势拉升（中国石油涨超2%）。南向资金港股通成交1,105.45亿港元，净买入9只成分股。兴业证券认为后续中东形势虽仍有反复，但升级为更大范围冲突的概率已明显下降，4月港股有望迎来做多窗口。</p>
+  </div>
+</div>
+
+<!-- 边际变化追踪 -->
+<div class="section">
+  <div class="section-title"><span class="icon">📈</span>边际变化追踪</div>
+  <table>
+    <tr><th>指标</th><th>最新值</th><th>环比</th><th>研判</th></tr>
+    <tr>
+      <td>北向资金（4/23）</td>
+      <td>成交3,530.95亿</td>
+      <td><span class="badge badge-flat">占成交额12.59%</span></td>
+      <td>具体净流入/流出数据暂未披露，成交活跃</td>
+    </tr>
+    <tr>
+      <td>两融余额（科创板）</td>
+      <td>3,158.72亿</td>
+      <td><span class="badge badge-up">+18.63亿</span> 连续12日增</td>
+      <td>杠杆资金持续活跃，风险偏好处于高位</td>
+    </tr>
+    <tr>
+      <td>USD/CNH 离岸人民币</td>
+      <td>6.8354</td>
+      <td><span class="badge badge-up">+0.08%</span></td>
+      <td>人民币小幅贬值，美元阶段性走强压制</td>
+    </tr>
+    <tr>
+      <td>中国10年期国债收益率</td>
+      <td>1.7548%</td>
+      <td><span class="badge badge-up">+1.59BP</span></td>
+      <td>收益率小幅反弹，但仍处历史极低区间</td>
+    </tr>
+    <tr>
+      <td>可转债市场温度</td>
+      <td>~92.2度</td>
+      <td><span class="badge badge-up">高温区</span></td>
+      <td>中位数141元，溢价率38.1%，估值处于历史极值</td>
+    </tr>
+  </table>
+</div>
+
+<!-- 仓位建议 -->
+<div class="section">
+  <div class="section-title"><span class="icon">⚖️</span>仓位建议</div>
+  <div class="advice-box advice-aggressive">
+    <div class="label">🔴 激进型（风险承受高）</div>
+    <p><strong>建议仓位：70%-80%</strong> | 触发条件：沪指站稳4100点、VIX回落至17以下、北向连续3日净流入超50亿</p>
+    <p>主攻AI算力/半导体（国产替代）、低空经济、机器人概念。港股可增配互联网龙头（腾讯、美团）。止损线：沪指跌破4000点或个股跌幅超15%强制减仓。</p>
+  </div>
+  <div class="advice-box advice-moderate">
+    <div class="label">🟡 稳健型（风险承受中等）</div>
+    <p><strong>建议仓位：50%-60%</strong> | 触发条件：沪指在4000-4200区间震荡、成交额维持2万亿以上</p>
+    <p>均衡配置：科技成长（40%）+ 高股息红利（30%）+ 消费复苏（20%）+ 现金（10%）。关注电力、银行、家电等防御板块轮动。触发减仓：沪指跌破3950点或成交额萎缩至1.5万亿以下。</p>
+  </div>
+  <div class="advice-box advice-conservative">
+    <div class="label">🟢 保守型（风险承受低）</div>
+    <p><strong>建议仓位：30%-40%</strong> | 触发条件：市场波动加剧（VIX>22）、地缘风险升温、北向持续流出</p>
+    <p>重仓高评级信用债+国债ETF，权益仅配置高股息（长江电力、中国神华）和宽基ETF（沪深300）。可转债控制在5%以内，规避高溢价品种。触发加仓：沪指回落至3800点以下且VIX突破25。</p>
+  </div>
+</div>
+
+<!-- 宏观策略研判 -->
+<div class="section">
+  <div class="section-title"><span class="icon">🌍</span>宏观策略研判</div>
+  <div class="summary-text">
+    <p><strong>海外：</strong>美联储维持"观望"姿态，6月前降息预期大幅降温。美元指数反弹至100上方，对新兴市场构成流动性压力。中东局势虽仍有反复，但升级为更大范围冲突的概率已明显下降，节奏上可能类似2025年4月关税冲击后的"威胁—缓和—再拉锯"过程。油价在地缘与关税博弈中剧烈震荡，短期方向不明。</p>
+    <p><strong>国内：</strong>4月23日A股成交放大至2.82万亿创近7周新高，但近4100只个股下跌，呈现"放量调整"特征。市场主线从前期普涨转向结构性分化，资金从高位科技板块（电子净流出227亿）流向防御板块（公用事业净流入25亿、家电净流入30亿、食品饮料净流入29亿）。</p>
+    <p><strong>政策面：</strong>"十五五"规划政策红利逐步明晰，为科技、高端制造注入中长期信心。AI产业从算力基建迈向商业化兑现元年，头部云服务商提价、AI应用标杆新股上市提振市场对科技板块盈利想象力。但短期需警惕年报/一季报密集披露期的业绩兑现压力。</p>
+  </div>
+</div>
+
+<!-- A股投资逻辑 -->
+<div class="section">
+  <div class="section-title"><span class="icon">🇨🇳</span>A股投资逻辑</div>
+  <div class="summary-text">
+    <p><strong>板块轮动：</strong>市场从"普涨"进入"分化"阶段。前期涨幅巨大的电子、有色金属、通信板块遭遇主力资金大幅流出（电子净流出227.76亿，有色金属净流出超百亿），资金转向防御性板块。公用事业（电力）、银行、家电、食品饮料获得主力净流入，呈现典型的"高位切低位"轮动特征。</p>
+    <p><strong>景气度排序：</strong>
+      <span class="tag">AI算力/半导体</span>（国产替代逻辑强，但短期涨幅过大需消化）
+      <span class="tag">电力/绿电</span>（华电辽能3连板，政策+业绩双驱动）
+      <span class="tag">燃气轮机</span>（福鞍股份一字涨停，应流股份创历史新高）
+      <span class="tag">油气</span>（山东墨龙涨停，地缘溢价）
+      <span class="tag">大消费</span>（白酒、零售逆势活跃，迎驾贡酒涨停）
+    </p>
+    <p><strong>资金面：</strong>两融余额持续攀升（科创板连续12日增加），杠杆资金活跃度处于高位，是支撑市场成交量的重要力量。但需警惕：一旦市场回调，杠杆资金可能加速卖出形成负反馈。主力资金全天净流出802亿，机构调仓动作明显。</p>
+  </div>
+</div>
+
+<!-- 港股核心机会 -->
+<div class="section">
+  <div class="section-title"><span class="icon">🌏</span>港股核心机会</div>
+  <div class="summary-text">
+    <p><strong>互联网：</strong>恒科指收跌1.98%，权重科技股集体走弱。腾讯（0700）跌1.75%，美团（3690）跌1.36%，阿里巴巴（9988）跌0.84%。南向资金方面，腾讯、阿里遭净卖出（分别流出10.28亿、10.62亿港元），显示内资短期获利了结。中长期来看，港股互联网估值仍具吸引力，但短期需等待业绩验证。</p>
+    <p><strong>新能源/半导体：</strong>芯片股领跌，华虹半导体跌近6%，壁仞科技跌超7%。中芯国际跌1.43%，南向资金小幅净买入1.72亿港元。新能源板块关注小米集团（回购450万股），短期受汽车业务竞争加剧压制。</p>
+    <p><strong>高股息：</strong>中国海洋石油（0883）涨2.9%，获南向资金净买入4.75亿港元居首。石油股在地缘溢价+高股息属性下逆势走强。友邦保险（01299）斥资2.35亿港元回购，显示管理层对股价的信心。</p>
+    <p><strong>策略建议：</strong>港股短期跟随A股调整，但资金面（南向连续21日净买入）支撑较强。回调可关注互联网龙头左侧布局机会，右侧等待恒指站稳26,000点后再加仓。</p>
+  </div>
+</div>
+
+<!-- 可转债策略 -->
+<div class="section">
+  <div class="section-title"><span class="icon">🎫</span>可转债策略</div>
+  <div class="summary-text">
+    <p><strong>市场状态：</strong>转债指数约2740点，中位数价格141元，溢价率中位数38.1%，市场温度约92.2度——处于<span class="badge badge-up">高温区</span>。定价偏离度12.94%，处于2018年以来99%分位数，配置性价比偏低。</p>
+    <p><strong>成交量：</strong>可转债成交804亿，换手率16.5%，活跃度尚可。但130元以上转债255个（占比75.9%），低于110元仅10个，市场整体价格极高。</p>
+    <p><strong>策略建议：</strong>当前转债整体价格和溢价率均处历史高位，若无仓位，现阶段参与空间不大。有持仓者建议"有T做T，舍得卖出"，仓位控制在5成左右。规避强赎高溢价品种与财报季弱资质个券的信用风险。关注方向：①130元左右的微盘（3亿内）活跃转债；②相对低价低溢价（价格140、溢价30左右）的波段品种；③纯防守类（溢价率70%左右、各类概念丰富）的底仓配置。</p>
+  </div>
+</div>
+
+<!-- 交易策略 -->
+<div class="section">
+  <div class="section-title"><span class="icon">📐</span>交易策略</div>
+  <div class="summary-text">
+    <p><strong>关键点位：</strong></p>
+    <p>• 沪指支撑位：<span class="highlight">4,050 → 4,000 → 3,950</span> | 压力位：<span class="highlight">4,150 → 4,200</span></p>
+    <p>• 创业板指支撑位：<span class="highlight">3,650 → 3,600</span> | 压力位：<span class="highlight">3,800 → 3,850</span></p>
+    <p>• 恒生指数支撑位：<span class="highlight">25,500 → 25,000</span> | 压力位：<span class="highlight">26,000 → 26,500</span></p>
+    <p><strong>情景分析：</strong></p>
+    <p><strong>情景A（概率40%）：</strong>周五延续震荡调整，沪指在4050-4120区间震荡。操作上保持现有仓位，不追涨杀跌，利用板块轮动做T。触发条件：成交额维持2.5万亿以上、VIX<20。</p>
+    <p><strong>情景B（概率35%）：</strong>周末避险情绪升温，资金获利了结，沪指下探4000点。操作上减仓高位科技板块，增配高股息防御品种。触发条件：主力资金连续2日净流出超500亿、北向净流出超50亿。</p>
+    <p><strong>情景C（概率25%）：</strong>政策利好或地缘缓和催化，市场反弹修复。操作上加仓AI算力、半导体等主线。触发条件：沪指放量突破4150点、VIX回落至17以下。</p>
+    <p><strong>风控纪律：</strong></p>
+    <p>• 个股止损：持仓个股跌幅超10%触发审视，超15%强制减仓</p>
+    <p>• 仓位止损：沪指跌破3950点且3日内未收复，总仓位降至50%以下</p>
+    <p>• 杠杆风控：两融维持担保比低于250%时，主动降杠杆</p>
+    <p>• 时间风控：周五午后减少开新仓，规避周末不确定性</p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>晨报生成时间：2026年4月24日 08:30（北京时间）</p>
+  <p>数据来源：公开市场信息（新浪财经、财联社、英为财情、东方财富等）</p>
+  <p>⚠️ 本报告仅供参考，不构成投资建议。市场有风险，投资需谨慎。</p>
+</div>
+
+</div>
+</body>
+</html>
