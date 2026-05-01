@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日综合晨报 | 2026年5月1日</title>
+    <style>
+        :root {
+            --primary: #1e293b;
+            --accent: #3b82f6;
+            --danger: #ef4444;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --border: #e2e8f0;
+            --text: #1e293b;
+            --text-muted: #64748b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+        .header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 40px 32px;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            box-shadow: 0 20px 40px rgba(30, 58, 95, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; position: relative; }
+        .header .subtitle { font-size: 15px; opacity: 0.85; position: relative; }
+        .header .meta { font-size: 13px; opacity: 0.7; margin-top: 12px; position: relative; }
+        .holiday-badge {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.2);
+            color: #fbbf24;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .section {
+            background: var(--card);
+            padding: 28px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--accent);
+        }
+        .section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 20px 0 12px;
+            color: var(--primary);
+        }
+
+        .indicator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .indicator-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+        .indicator-card .label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        .indicator-card .value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .indicator-card .change {
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            border-radius: 6px;
+        }
+        .change.up { background: #fef2f2; color: #dc2626; }
+        .change.down { background: #f0fdf4; color: #16a34a; }
+        .change.neutral { background: #f1f5f9; color: var(--text-muted); }
+        .indicator-card .note {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 14px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+        th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        tr:hover { background: #f8fafc; }
+        td .ticker { font-family: monospace; font-weight: 600; color: var(--accent); }
+
+        .position-table th { background: #eff6ff; color: #1e40af; }
+        .position-table .type-col { width: 100px; }
+        .position-table .advice { font-weight: 700; font-size: 18px; }
+        .position-table .logic { font-size: 13px; color: var(--text-muted); max-width: 400px; }
+
+        .signal-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .signal-item {
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+        .signal-item.buy { background: #fef2f2; border-left: 3px solid #ef4444; }
+        .signal-item.sell { background: #f0fdf4; border-left: 3px solid #22c55e; }
+        .signal-item.hold { background: #fffbeb; border-left: 3px solid #f59e0b; }
+        .signal-item h4 { font-size: 13px; margin-bottom: 6px; }
+
+        .news-list { list-style: none; }
+        .news-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+            display: flex;
+            gap: 10px;
+        }
+        .news-list li:last-child { border-bottom: none; }
+        .news-list .tag {
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            white-space: nowrap;
+            height: fit-content;
+        }
+        .tag.positive { background: #dcfce7; color: #166534; }
+        .tag.negative { background: #fee2e2; color: #991b1b; }
+        .tag.neutral { background: #e0e7ff; color: #3730a3; }
+
+        .scenario-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .scenario-card {
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .scenario-card.optimistic { background: #fef2f2; border: 1px solid #fecaca; }
+        .scenario-card.baseline { background: #f0f9ff; border: 1px solid #bae6fd; }
+        .scenario-card.pessimistic { background: #f0fdf4; border: 1px solid #bbf7d0; }
+        .scenario-card h4 { font-size: 14px; margin-bottom: 8px; }
+        .scenario-card .prob { font-size: 24px; font-weight: 700; }
+        .scenario-card .desc { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+
+        .risk-box {
+            background: linear-gradient(135deg, #fef2f2 0%, #fff1f2 100%);
+            border: 1px solid #fecaca;
+            border-radius: 10px;
+            padding: 16px;
+            margin-top: 16px;
+        }
+        .risk-box h4 { color: #991b1b; font-size: 14px; margin-bottom: 8px; }
+        .risk-box ul { margin-left: 18px; font-size: 13px; color: #7f1d1d; }
+        .risk-box li { margin-bottom: 4px; }
+
+        .footer {
+            text-align: center;
+            padding: 32px;
+            color: var(--text-muted);
+            font-size: 12px;
+            border-top: 1px solid var(--border);
+            margin-top: 20px;
+        }
+        .footer .disclaimer {
+            color: var(--danger);
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .scenario-grid { grid-template-columns: 1fr; }
+            .indicator-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 22px; }
+            .section { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>每日综合晨报</h1>
+            <div class="subtitle">
+                2026年5月1日 星期五
+                <span class="holiday-badge">五一劳动节休市</span>
+            </div>
+            <div class="meta">
+                数据截止：04月30日收盘 | A股/港股因五一劳动节休市（5月1日-5月5日）| 美股正常交易
+            </div>
+        </div>
+
+        <!-- 三大核心敏感指标 -->
+        <div class="section">
+            <h2>🔥 三大核心敏感指标</h2>
+            <div class="indicator-grid">
+                <div class="indicator-card">
+                    <div class="label">VIX恐慌指数</div>
+                    <div class="value">16.89</div>
+                    <div class="change down">▼ 1.92 (-10.21%)</div>
+                    <div class="note">恐慌情绪显著回落，美股风险偏好回升。但中东局势仍存不确定性，霍尔木兹海峡运输受阻推升油价，VIX已脱离高位但不可掉以轻心。</div>
+                </div>
+                <div class="indicator-card">
+                    <div class="label">WTI原油价格</div>
+                    <div class="value">$106.88</div>
+                    <div class="change up">▲ 6.95 (+6.95%)</div>
+                    <div class="note">美伊冲突导致霍尔木兹海峡受阻，油价从4月初约$62飙升至$106以上，单月涨幅超70%。通胀预期急剧升温，全球供应链承压。</div>
+                </div>
+                <div class="indicator-card">
+                    <div class="label">美元指数 DXY</div>
+                    <div class="value">98.10</div>
+                    <div class="change down">▼ 0.86 (-0.87%)</div>
+                    <div class="note">美元指数创近3个月新低。中东冲突下美元避险属性减弱，资金流向日元、瑞郎及人民币等更稳定货币。新兴市场资金外流压力缓解。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 边际变化追踪 -->
+        <div class="section">
+            <h2>📈 边际变化追踪</h2>
+
+            <h3>北向资金（4月30日）</h3>
+            <div class="indicator-grid">
+                <div class="indicator-card">
+                    <div class="label">当日净流入</div>
+                    <div class="value">+68.3亿</div>
+                    <div class="change neutral">环比昨日持平</div>
+                    <div class="note">节前最后一个交易日北向资金维持净流入。近5日累计净流入约300亿元，算力/半导体成为外资主攻方向。寒武纪获北向资金净买入16.81亿元。</div>
+                </div>
+                <div class="indicator-card">
+                    <div class="label">近5日趋势</div>
+                    <div class="value">持续流入</div>
+                    <div class="change neutral">方向：算力/半导体/新能源</div>
+                    <div class="note">外资连续5日加仓，累计超360亿元。偏好从消费向科技转移，寒武纪、中芯国际、宁德时代等获重点配置。茅台、五粮液遭净卖出。</div>
+                </div>
+            </div>
+
+            <h3>两融余额</h3>
+            <div class="indicator-grid">
+                <div class="indicator-card">
+                    <div class="label">全市场两融余额（4月29日）</div>
+                    <div class="value">27,323亿</div>
+                    <div class="change up">▲ 236亿 (+0.87%)</div>
+                    <div class="note">杠杆资金持续加仓，融资余额27125亿元创历史新高附近。占A股流通市值2.59%，两融交易额占比10.11%。杠杆情绪偏积极，但未达过热水平。</div>
+                </div>
+                <div class="indicator-card">
+                    <div class="label">科创板两融余额</div>
+                    <div class="value">3,232亿</div>
+                    <div class="change up">▲ 4.87亿 (+0.15%)</div>
+                    <div class="note">连续4个交易日增加。科创板杠杆资金对半导体/AI算力方向加仓明显，与北向资金方向一致。杠杆资金风险可控，平均维持担保比例约280%。</div>
+                </div>
+            </div>
+
+            <h3>汇率 & 利率</h3>
+            <div class="indicator-grid">
+                <div class="indicator-card">
+                    <div class="label">离岸人民币 USD/CNH</div>
+                    <div class="value">6.9096</div>
+                    <div class="change down">▼ 升值趋势</div>
+                    <div class="note">离岸人民币升破6.91关口，触及近3年高位。在岸收于6.8335。摩根大通指出人民币避险属性凸显，中东冲突期间始终维持在7.0下方。</div>
+                </div>
+                <div class="indicator-card">
+                    <div class="label">10年期美债收益率</div>
+                    <div class="value">~4.95%</div>
+                    <div class="change up">▲ 逼近5%</div>
+                    <div class="note">30年期美债收益率触及5%，2年期3.94%。油价飙升推升通胀预期，美联储维持利率3.5%-3.75%不变但内部分歧创1992年来最高（8:4），降息预期延后。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 仓位建议 -->
+        <div class="section">
+            <h2>⚖️ 仓位建议（详细版）</h2>
+            <table class="position-table">
+                <thead>
+                    <tr>
+                        <th class="type-col">投资者类型</th>
+                        <th>建议仓位</th>
+                        <th>逻辑支撑</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>激进型</strong></td>
+                        <td class="advice">75-85%</td>
+                        <td class="logic">A股科创50暴涨5.19%，寒武纪业绩超预期引爆国产算力链；美股科技股财报分化但谷歌云收入破200亿美元，AI资本支出指引上调。半导体全产业链景气共振，短期结构性机会明确。但需警惕中东局势反复及油价飙升对全球流动性的挤压。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>稳健型</strong></td>
+                        <td class="advice">55-65%</td>
+                        <td class="logic">A股成交额维持2.7万亿高位，北向资金+杠杆资金双流入，市场活跃度支撑。但五一假期期间外围市场波动风险（中东、美联储分歧）需要对冲。建议核心仓位配置科技成长+高股息央国企，预留15%现金应对假期后开盘波动。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>保守型</strong></td>
+                        <td class="advice">35-45%</td>
+                        <td class="logic">WTI原油突破$100，全球通胀预期急剧升温；美联储内部分歧创33年新高，10年期美债逼近5%，全球流动性收紧风险加大。长假期间不确定性高，建议降低权益仓位，增配短债、货币基金及黄金ETF对冲。</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>仓位调整触发条件</h3>
+            <div class="signal-box">
+                <div class="signal-item buy">
+                    <h4>🔴 加仓信号</h4>
+                    <p>• 节后A股成交额维持2.5万亿以上且北向持续流入</p>
+                    <p>• 中东局势出现缓和迹象（霍尔木兹海峡恢复通行）</p>
+                    <p>• 油价回落至$85以下，通胀预期降温</p>
+                    <p>• 科创50站稳1900点且半导体板块量能持续</p>
+                </div>
+                <div class="signal-item sell">
+                    <h4>🟢 减仓信号</h4>
+                    <p>• 油价持续突破$120，全球滞胀风险加剧</p>
+                    <p>• 10年期美债突破5.2%，流动性收紧超预期</p>
+                    <p>• 美股科技巨头财报持续不及预期，纳指回调超5%</p>
+                    <p>• 离岸人民币贬回7.0上方，外资流出加速</p>
+                </div>
+                <div class="signal-item hold">
+                    <h4>🟡 维持信号</h4>
+                    <p>• 当前格局延续：地缘冲突僵持+油价高位震荡</p>
+                    <p>• A股结构性行情持续，板块轮动但未放量突破</p>
+                    <p>• 美联储维持观望，利率预期稳定</p>
+                    <p>• 人民币在6.8-7.0区间窄幅波动</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 宏观策略研判 -->
+        <div class="section">
+            <h2>🌍 宏观策略研判</h2>
+
+            <h3>全球资金流向</h3>
+            <ul class="news-list">
+                <li><span class="tag positive">流入</span>南向资金4月累计净买入港股443亿港元，年内逼近8400亿港元，重点加仓国有银行H股及科技龙头</li>
+                <li><span class="tag positive">流入</span>北向资金近5日累计加仓超360亿元，从消费向科技切换，算力/半导体成主攻方向</li>
+                <li><span class="tag negative">流出</span>美元指数跌破99，资金从美元资产向日元、瑞郎、人民币等避险货币转移</li>
+                <li><span class="tag neutral">分化</span>美股4月强势反弹（纳指+15%），但财报分化明显——谷歌暴涨，Meta/微软下跌</li>
+            </ul>
+
+            <h3>政策面解读</h3>
+            <ul class="news-list">
+                <li><span class="tag neutral">货币政策</span>美联储维持利率3.5%-3.75%不变，但4票反对维持（8:4），创1992年以来最大分歧。降息预期延后，鲍威尔5月15日任期结束后留任理事</li>
+                <li><span class="tag positive">财政政策</span>深圳优化限购+公积金贷款最高351万，地产政策持续放松。险资35%权益上限落地，长期资金入市预期升温</li>
+                <li><span class="tag positive">产业政策</span>政治局会议定调"流动性合理充裕、强科技托底"，全面实施"人工智能+"行动。谷歌向Anthropic追加400亿美元投资，AI军备竞赛升级</li>
+            </ul>
+
+            <h3>国际局势影响</h3>
+            <ul class="news-list">
+                <li><span class="tag negative">地缘</span>美伊冲突持续，霍尔木兹海峡受阻，全球约20%石油运输面临中断风险</li>
+                <li><span class="tag negative">地缘</span>美国5月将与以色列举行"三叉戟接点"联合军演，中东紧张局势或进一步升级</li>
+                <li><span class="tag neutral">贸易</span>特朗普暂停部分行政令，但贸易摩擦整体态势未改，全球供应链重构持续</li>
+                <li><span class="tag neutral">地缘</span>中俄否决安理会涉霍尔木兹海峡决议，大国博弈加剧</li>
+            </ul>
+        </div>
+
+        <!-- A股投资逻辑 -->
+        <div class="section">
+            <h2>🇨🇳 A股投资逻辑</h2>
+
+            <h3>板块轮动分析</h3>
+            <table>
+                <thead>
+                    <tr><th>板块</th><th>4月30日表现</th><th>资金动向</th><th>逻辑</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="ticker">半导体/AI算力</span></td>
+                        <td class="change up">▲ 暴涨</td>
+                        <td>主力净流入169.74亿</td>
+                        <td>寒武纪一季报净利10.13亿同比+185%，引爆国产算力链；谷歌云收入破200亿美元催化全球AI产业链</td>
+                    </tr>
+                    <tr>
+                        <td><span class="ticker">能源金属/锂矿</span></td>
+                        <td class="change up">▲ 强势</td>
+                        <td>永杉锂业3连板</td>
+                        <td>新能源需求+地缘冲突下能源安全主题，锂矿股延续强势</td>
+                    </tr>
+                    <tr>
+                        <td><span class="ticker">房地产</span></td>
+                        <td class="change up">▲ 异动</td>
+                        <td>津投城开等多股涨停</td>
+                        <td>深圳优化限购+公积金贷款政策刺激，地产板块脉冲式反弹</td>
+                    </tr>
+                    <tr>
+                        <td><span class="ticker">游戏/传媒</span></td>
+                        <td class="change down">▼ 下跌</td>
+                        <td>资金流出</td>
+                        <td>前期涨幅过大，业绩兑现不及预期，资金转向硬科技</td>
+                    </tr>
+                    <tr>
+                        <td><span class="ticker">银行/保险</span></td>
+                        <td class="change neutral">→ 震荡</td>
+                        <td>保险股上涨</td>
+                        <td>中国人寿+3%，新华保险+2%，高股息防御属性受青睐</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>景气度矩阵</h3>
+            <table>
+                <thead>
+                    <tr><th>行业</th><th>景气度</th><th>趋势</th><th>催化剂</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>半导体/AI算力</td><td>🔥🔥🔥🔥🔥</td><td>加速上升</td><td>业绩兑现+政策托底+全球AI资本开支激增</td></tr>
+                    <tr><td>新能源（锂/光）</td><td>🔥🔥🔥🔥</td><td>企稳回升</td><td>地缘冲突推升能源安全叙事，下游需求回暖</td></tr>
+                    <tr><td>银行/高股息</td><td>🔥🔥🔥</td><td>温和</td><td>险资入市+防御需求，但息差压力仍存</td></tr>
+                    <tr><td>消费/白酒</td><td>🔥🔥</td><td>偏弱</td><td>北向资金减持茅台/五粮液，内需复苏节奏慢于预期</td></tr>
+                    <tr><td>地产链</td><td>🔥🔥</td><td>脉冲</td><td>政策刺激+低基数，但基本面改善尚需时间</td></tr>
+                </tbody>
+            </table>
+
+            <h3>资金面分析</h3>
+            <ul class="news-list">
+                <li><span class="tag positive">量能</span>沪深两市成交额2.76万亿元，维持历史高位水平，市场交投活跃</li>
+                <li><span class="tag positive">外资</span>北向净流入68.3亿元，近5日累计超360亿，方向明确：算力>半导体>新能源</li>
+                <li><span class="tag positive">杠杆</span>两融余额27323亿元，融资余额27125亿元，杠杆资金对科技股加仓明显</li>
+                <li><span class="tag neutral">公募</span>险资35%权益上限落地，长期资金入市预期升温，但短期增量有限</li>
+            </ul>
+        </div>
+
+        <!-- 港股核心机会 -->
+        <div class="section">
+            <h2>🇭🇰 港股核心机会</h2>
+
+            <h3>互联网巨头估值分析</h3>
+            <table>
+                <thead>
+                    <tr><th>标的</th><th>4月30日</th><th>4月涨幅</th><th>估值判断</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="ticker">腾讯 (0700.HK)</span></td>
+                        <td class="change down">▼ -2.38%</td>
+                        <td>+约5%</td>
+                        <td>游戏+广告基本盘稳健，AI布局加速。估值处于历史中位，南向资金持续加仓。关注微信AI生态进展。</td>
+                    </tr>
+                    <tr>
+                        <td><span class="ticker">阿里巴巴 (9988.HK)</span></td>
+                        <td class="change down">▼ -3.52%</td>
+                        <td>+约8%</td>
+                        <td>云业务转型阵痛期，但AI+电商融合有看点。估值偏低，适合左侧布局。短期受反垄断预期压制。</td>
+                    </tr>
+                    <tr>
+                        <td><span class="ticker">美团 (3690.HK)</span></td>
+                        <td class="change up">▲ +0.12%</td>
+                        <td>+约10%</td>
+                        <td>本地生活基本盘稳固，外卖+到店双轮驱动。估值合理，业绩确定性较高。</td>
+                    </tr>
+                    <tr>
+                        <td><span class="ticker">小米 (1810.HK)</span></td>
+                        <td class="change down">▼ -3.72%</td>
+                        <td>+约15%</td>
+                        <td>汽车业务放量，SU7交付超预期。但手机业务承压，估值已反映较多乐观预期。</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>新能源车企动态</h3>
+            <ul class="news-list">
+                <li><span class="tag negative">下跌</span>比亚迪股份 -5.36%，蔚来 -6%，小鹏 -2.4%。新能源车企集体回调，或受特斯拉降价及行业竞争加剧影响</li>
+                <li><span class="tag neutral">分化</span>理想汽车相对抗跌，差异化定位（增程+家庭）提供护城河。关注5月交付数据</li>
+                <li><span class="tag positive">催化</span>宁德时代发布新一代电池技术，港股通资金对新能源产业链关注度提升</li>
+            </ul>
+
+            <h3>高股息央国企</h3>
+            <ul class="news-list">
+                <li><span class="tag positive">推荐</span>建设银行H股、中国移动、中国海洋石油。南向资金年内净流入超8400亿港元，重点配置国有银行H股</li>
+                <li><span class="tag positive">逻辑</span>港股高股息标的股息率普遍超5%，远高于A股同类标的。险资入市+防御需求双驱动</li>
+                <li><span class="tag neutral">风险</span>油价飙升利好中石油/中海油，但中游炼化承压。关注地缘政治对能源股的扰动</li>
+            </ul>
+        </div>
+
+        <!-- 可转债策略 -->
+        <div class="section">
+            <h2>🎯 可转债策略</h2>
+
+            <h3>市场整体估值</h3>
+            <div class="indicator-grid">
+                <div class="indicator-card">
+                    <div class="label">转债指数</div>
+                    <div class="value">2,699</div>
+                    <div class="change down">▼ -28点</div>
+                    <div class="note">转债指数从年初约2200点升至2699点，累计涨幅约22%。</div>
+                </div>
+                <div class="indicator-card">
+                    <div class="label">中位数价格</div>
+                    <div class="value">138.3元</div>
+                    <div class="change neutral">处于历史97.5%分位</div>
+                    <div class="note">130元以上转债242个，占比72.6%；低于110元仅11个。高价转债占比过高。</div>
+                </div>
+                <div class="indicator-card">
+                    <div class="label">市场温度</div>
+                    <div class="value">87.7°</div>
+                    <div class="change up">🔥 高温区</div>
+                    <div class="note">市场温度处于高温区，估值已脱离理性范围。百元平价溢价率约39%，处于历史极高水平。</div>
+                </div>
+                <div class="indicator-card">
+                    <div class="label">中位数溢价率</div>
+                    <div class="value">38%</div>
+                    <div class="change neutral">处于历史高位</div>
+                    <div class="note">溢价率中位数38%，处于2018年以来72.1%分位、2021年以来56.1%分位。配置价值正在消失。</div>
+                </div>
+            </div>
+
+            <h3>异动转债监控</h3>
+            <table>
+                <thead>
+                    <tr><th>转债</th><th>正股</th><th>价格</th><th>溢价率</th><th>异动原因</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>华特转债</td><td>华特气体</td><td>~226元</td><td>高</td><td>4月29日涨幅16%居首，半导体上游材料受益于国产替代</td></tr>
+                    <tr><td>联瑞转债</td><td>联瑞新材</td><td>~226元</td><td>115%</td><td>PCB上游材料，AI算力需求催化，但溢价率远超市场平均</td></tr>
+                    <tr><td>鼎捷转债</td><td>鼎捷软件</td><td>~216元</td><td>高</td><td>上市后持续大涨，工业软件+AI概念双重加持</td></tr>
+                </tbody>
+            </table>
+
+            <h3>个券选择逻辑</h3>
+            <ul class="news-list">
+                <li><span class="tag negative">谨慎</span>当前可转债配置价值正在消失，仅剩交易属性。买入正股性价比普遍优于对应转债</li>
+                <li><span class="tag neutral">策略</span>若必须参与，建议：①双低策略（低价+低溢价）筛选剩余标的；②关注强赎风险，回避溢价率>50%的高价转债；③博弈下修条款的低位标的</li>
+                <li><span class="tag positive">机会</span>半导体/AI算力相关转债（如华特、芯源）仍受正股催化，但需控制仓位，利用波动做T</li>
+                <li><span class="tag neutral">回避</span>新券普遍首日涨停57.3%，次日继续冲高，定价已脱离理性。不建议追高次新转债</li>
+            </ul>
+        </div>
+
+        <!-- 交易策略 -->
+        <div class="section">
+            <h2>⚔️ 交易策略</h2>
+
+            <h3>关键点位（支撑/压力）</h3>
+            <table>
+                <thead>
+                    <tr><th>指数</th><th>当前</th><th>支撑位</th><th>压力位</th><th>判断</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>上证指数</td><td>4112</td><td>4050 / 4000</td><td>4150 / 4200</td><td>4100点关口反复争夺，节前缩量整理，节后关注量能</td></tr>
+                    <tr><td>科创50</td><td>~1080</td><td>1000 / 950</td><td>1100 / 1150</td><td>暴涨5.19%后关注持续性，寒武纪业绩催化核心</td></tr>
+                    <tr><td>恒生指数</td><td>25777</td><td>25200 / 25000</td><td>26500 / 27000</td><td>4月累计+4%，但节前回调1.28%，关注26000点收复</td></tr>
+                    <tr><td>纳斯达克</td><td>24892</td><td>24000 / 23500</td><td>25000 / 25500</td><td>4月+15%创2020年以来最大单月涨幅，但财报分化，短期或有回调</td></tr>
+                </tbody>
+            </table>
+
+            <h3>情景分析</h3>
+            <div class="scenario-grid">
+                <div class="scenario-card optimistic">
+                    <h4>🟢 乐观情景 (25%)</h4>
+                    <div class="prob">25%</div>
+                    <div class="desc">中东局势缓和+油价回落至$85以下，A股节后放量突破4200点，科创50冲击1150点。科技成长+高股息双主线并行。</div>
+                </div>
+                <div class="scenario-card baseline">
+                    <h4>🔵 基准情景 (50%)</h4>
+                    <div class="prob">50%</div>
+                    <div class="desc">地缘冲突僵持+油价$100-110区间震荡，A股维持4050-4150点区间震荡，结构性行情持续。科技成长轮动，高股息防御。</div>
+                </div>
+                <div class="scenario-card pessimistic">
+                    <h4>🔴 谨慎情景 (25%)</h4>
+                    <div class="prob">25%</div>
+                    <div class="desc">油价突破$120+10年期美债突破5.2%，全球流动性收紧，A股回调至3900-4000点区间。防御为主，减仓至下限。</div>
+                </div>
+            </div>
+
+            <div class="risk-box">
+                <h4>⚠️ 风控提醒（五一假期特别版）</h4>
+                <ul>
+                    <li><strong>假期外围风险：</strong>5月1日-5月5日A股休市期间，美股正常交易（5月5日劳动节休市）。关注中东局势变化、非农数据、美联储官员讲话</li>
+                    <li><strong>油价波动风险：</strong>WTI已从$62飙升至$106，若霍尔木兹海峡长期受阻，油价可能冲击$150，对全球股市形成系统性冲击</li>
+                    <li><strong>流动性风险：</strong>10年期美债逼近5%，美联储内部分歧创33年新高。若通胀数据超预期，市场可能重新定价利率路径</li>
+                    <li><strong>科技股估值风险：</strong>谷歌+9.96%后估值已高，Meta/微软财报后下跌。AI资本支出7000亿美元能否兑现存疑，警惕"AI泡沫"叙事</li>
+                    <li><strong>汇率风险：</strong>离岸人民币6.83处于近3年高位，若地缘冲突升级或美元反弹，存在回调至7.0附近的可能</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 今日要闻 -->
+        <div class="section">
+            <h2>📰 今日要闻（5月1日）</h2>
+            <ul class="news-list">
+                <li><span class="tag negative">地缘</span>美伊冲突持续，霍尔木兹海峡运输受阻，全球约20%石油运输面临中断</li>
+                <li><span class="tag negative">地缘</span>特朗普称已"摧毁"伊朗核能力，伊朗接受巴基斯坦停火提议</li>
+                <li><span class="tag positive">科技</span>谷歌母公司Alphabet一季报超预期，谷歌云收入首次突破200亿美元，股价+9.96%</li>
+                <li><span class="tag neutral">宏观</span>美联储维持利率3.5%-3.75%不变，但4票反对维持（8:4），创1992年以来最大分歧</li>
+                <li><span class="tag positive">政策</span>政治局会议定调"流动性合理充裕、强科技托底"，全面实施"人工智能+"行动</li>
+                <li><span class="tag neutral">产业</span>谷歌向Anthropic追加400亿美元投资，四家科技巨头AI资本支出合计有望突破7000亿美元</li>
+                <li><span class="tag neutral">市场</span>A股/港股因五一劳动节休市（5月1日-5月5日），5月6日恢复交易</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>数据来源：金十数据、新浪财经、东方财富、财联社、证券时报、每日经济新闻、 investing.com</p>
+            <p>报告生成时间：2026-05-01 08:15 CST | 数据截止：2026-04-30 收盘</p>
+            <p class="disclaimer">⚠️ 免责声明：本报告仅供参考，不构成投资建议。市场有风险，投资需谨慎。报告中的数据和分析基于公开信息，可能存在滞后或偏差。</p>
+        </div>
+    </div>
+</body>
+</html>
