@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日综合晨报 - 2026年05月02日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            min-height: 100vh; padding: 20px; color: #e2e8f0; line-height: 1.6;
+        }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .header {
+            text-align: center; padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(30,58,138,0.4) 0%, rgba(59,130,246,0.2) 100%);
+            border-radius: 16px; margin-bottom: 30px; border: 1px solid rgba(59,130,246,0.3);
+            position: relative;
+        }
+        .header::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0;
+            height: 4px; background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+        }
+        .header h1 {
+            font-size: 28px; background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .header .subtitle { color: #64748b; font-size: 14px; letter-spacing: 2px; }
+        .header .update-time { 
+            color: #38bdf8; font-size: 13px; margin-top: 15px;
+            padding: 6px 20px; background: rgba(56,189,248,0.15);
+            border: 1px solid rgba(56,189,248,0.3); border-radius: 20px; display: inline-block;
+        }
+        .holiday-banner {
+            background: linear-gradient(135deg, rgba(251,191,36,0.15) 0%, rgba(245,158,11,0.1) 100%);
+            border: 1px solid rgba(251,191,36,0.4);
+            border-radius: 12px; padding: 16px 24px; margin-bottom: 20px;
+            color: #fbbf24; font-size: 14px; text-align: center;
+        }
+        .data-source {
+            color: #64748b; font-size: 11px; margin-top: 10px;
+        }
+        .card { background: rgba(30,41,59,0.5); border-radius: 12px; padding: 24px; margin-bottom: 20px; border: 1px solid rgba(71,85,105,0.4); }
+        .card h2 { font-size: 18px; color: #60a5fa; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid rgba(59,130,246,0.3); }
+        .card h3 { font-size: 15px; color: #94a3b8; margin: 20px 0 12px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+        th { background: rgba(59,130,246,0.15); color: #60a5fa; padding: 10px; text-align: left; font-weight: 600; font-size: 12px; }
+        td { padding: 10px; border-bottom: 1px solid rgba(71,85,105,0.3); }
+        .positive { color: #4ade80; font-weight: 600; }
+        .negative { color: #f87171; font-weight: 600; }
+        .neutral { color: #fbbf24; font-weight: 600; }
+        .metric-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
+        .metric-item { background: rgba(15,23,42,0.5); padding: 16px; border-radius: 10px; text-align: center; border: 1px solid rgba(71,85,105,0.3); }
+        .metric-value { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+        .metric-label { font-size: 11px; color: #64748b; }
+        .tag { display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+        .tag-bull { background: rgba(74,222,128,0.15); color: #4ade80; border: 1px solid rgba(74,222,128,0.3); }
+        .tag-bear { background: rgba(248,113,113,0.15); color: #f87171; border: 1px solid rgba(248,113,113,0.3); }
+        .tag-neutral { background: rgba(251,191,36,0.15); color: #fbbf24; border: 1px solid rgba(251,191,36,0.3); }
+        .insight-box { background: linear-gradient(135deg, rgba(59,130,246,0.1) 0%, rgba(139,92,246,0.1) 100%); border-left: 3px solid #8b5cf6; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .risk-box { background: rgba(248,113,113,0.08); border-left: 3px solid #f87171; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .opportunity-box { background: rgba(74,222,128,0.08); border-left: 3px solid #4ade80; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .strategy-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 16px 0; }
+        .strategy-card { background: rgba(15,23,42,0.4); padding: 16px; border-radius: 8px; border: 1px solid rgba(71,85,105,0.3); }
+        .strategy-card h4 { color: #94a3b8; font-size: 12px; margin-bottom: 8px; text-transform: uppercase; }
+        .footer { text-align: center; padding: 30px; color: #475569; font-size: 12px; }
+        ul { margin: 8px 0 8px 18px; }
+        li { margin: 6px 0; font-size: 13px; }
+        .nav { display: flex; justify-content: center; gap: 8px; margin-bottom: 25px; flex-wrap: wrap; }
+        .nav a { color: #94a3b8; text-decoration: none; padding: 8px 16px; background: rgba(30,41,59,0.6); border: 1px solid rgba(71,85,105,0.5); border-radius: 8px; font-size: 13px; transition: all 0.3s; }
+        @media (max-width: 768px) { .metric-row { grid-template-columns: repeat(2, 1fr); } .strategy-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 每日综合投资晨报</h1>
+            <div class="subtitle">Daily Comprehensive Market Intelligence</div>
+            <div class="update-time">⏱️ 最后更新：2026-05-02 08:19 | 本报告使用真实市场数据 ✅</div>
+            <div class="data-source">数据源：财联社 / 新浪财经 / 东方财富 / Investing.com（多源交叉验证）</div>
+        </div>
+
+        <div class="holiday-banner">
+            🏖️ <b>五一假期提示</b>：A股与港股今日休市（5月1日-5月5日）。本报告A股/港股数据基于节前最后交易日（4月30日），美股数据为隔夜最新（5月1日收盘）。
+        </div>
+
+        <div class="nav">
+            <a href="#core">🎯 核心指标</a>
+            <a href="#overnight">🌍 隔夜市场</a>
+            <a href="#marginal">📊 边际变化</a>
+            <a href="#position">🎯 仓位建议</a>
+            <a href="#macro">🧭 宏观研判</a>
+            <a href="#a-share">🇨🇳 A股逻辑</a>
+            <a href="#hk">🇭🇰 港股机会</a>
+            <a href="#bond">📈 转债策略</a>
+            <a href="#trading">⚡ 交易策略</a>
+        </div>
+
+        <!-- 三大核心敏感指标 -->
+        <div class="card" id="core">
+            <h2>🎯 三大核心敏感指标（每日必看）</h2>
+            <div class="metric-row">
+                <div class="metric-item">
+                    <div class="metric-value negative">16.99</div>
+                    <div class="metric-label">VIX恐慌指数</div>
+                    <div style="font-size:12px;margin-top:4px;" class="negative">+0.59% ↗</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value negative">$102.58</div>
+                    <div class="metric-label">WTI原油</div>
+                    <div style="font-size:12px;margin-top:4px;" class="negative">+1.74%</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value negative">98.23</div>
+                    <div class="metric-label">美元指数DXY</div>
+                    <div style="font-size:12px;margin-top:4px;" class="negative">+0.18%</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value positive">25114</div>
+                    <div class="metric-label">纳斯达克</div>
+                    <div style="font-size:12px;margin-top:4px;" class="positive">+0.89% 历史新高</div>
+                </div>
+            </div>
+            
+            <div class="insight-box">
+                <strong>🔍 核心逻辑解读：</strong><br>
+                • <b>VIX指数16.99（+0.59%）</b>：连续回落至低位，较4月初25.78高点已下跌超34%，市场恐慌情绪显著消退。低于20阈值，风险资产环境友好。<br>
+                • <b>WTI原油102.58美元（+1.74%）</b>：伊朗向巴基斯坦提交谈判方案，特朗普表示"不满意"，油价从日内低点99.30反弹。霍尔木兹海峡仍未恢复通航，地缘风险溢价仍存。<br>
+                • <b>美元指数98.23（+0.18%）</b>：日本财务省干预汇市支撑日元，美元短线承压后小幅反弹。整体仍处于4月以来下行通道，利于新兴市场资金流入。<br>
+                • <b>纳斯达克25,114（+0.89%）</b>：史上首次突破25,000点，连续两日创历史新高，科技股财报季强劲是核心驱动力。
+            </div>
+        </div>
+
+        <!-- 隔夜全球市场 -->
+        <div class="card" id="overnight">
+            <h2>🌍 隔夜全球市场全景（5月1日收盘）</h2>
+            
+            <div class="metric-row">
+                <div class="metric-item">
+                    <div class="metric-value positive">0.89%</div>
+                    <div class="metric-label">纳斯达克</div>
+                    <div style="font-size:12px;margin-top:4px;color:#64748b;">突破25000点 历史新高</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value positive">0.29%</div>
+                    <div class="metric-label">标普500</div>
+                    <div style="font-size:12px;margin-top:4px;color:#64748b;">连续两日创新高</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value negative">-0.31%</div>
+                    <div class="metric-label">道琼斯</div>
+                    <div style="font-size:12px;margin-top:4px;color:#64748b;">小幅回调</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value negative">-0.59%</div>
+                    <div class="metric-label">中国金龙指数</div>
+                    <div style="font-size:12px;margin-top:4px;color:#64748b;">中概小幅回调</div>
+                </div>
+            </div>
+
+            <table>
+                <tr><th>市场</th><th>指数</th><th>涨跌幅</th><th>关键点位</th><th>投资逻辑</th></tr>
+                <tr><td>美股</td><td>纳斯达克</td><td class="positive">+0.89%</td><td>25114.44</td><td>首次突破25000点，科技股财报强劲</td></tr>
+                <tr><td>美股</td><td>标普500</td><td class="positive">+0.29%</td><td>7230.12</td><td>连续两日创新高，4月创2000年来最大月涨幅</td></tr>
+                <tr><td>美股</td><td>道琼斯</td><td class="negative">-0.31%</td><td>49499.27</td><td>小幅收跌，工业股分化</td></tr>
+                <tr><td>美股</td><td>中国金龙</td><td class="negative">-0.59%</td><td>6887.43</td><td>中概普跌，蔚来跌7.51%</td></tr>
+                <tr><td>美股</td><td>费城半导体</td><td class="positive">+0.87%</td><td>~9800</td><td>刷新收盘纪录，英特尔涨5.44%</td></tr>
+                <tr><td>美股</td><td>闪迪(SNDK)</td><td class="positive">+8.25%</td><td>新高</td><td>存储需求旺盛</td></tr>
+                <tr><td>A股</td><td>上证指数</td><td class="positive">+0.11%</td><td>4107.52</td><td>节前微涨，科创50飙涨逾5%</td></tr>
+                <tr><td>港股</td><td>恒生指数</td><td class="positive">+0.28%</td><td>26435.18</td><td>节前收涨，南向流入121.92亿</td></tr>
+            </table>
+
+            <div class="insight-box">
+                <strong>🔍 A股/港股节后联动预测：</strong><br>
+                隔夜信号组合：<span class="tag tag-bull">偏正面</span><br>
+                • 美股纳指再创历史新高（+0.89%）→ 科技成长情绪正向传导，利好A股AI/半导体映射<br>
+                • 标普500连续两日创新高 → 全球风险偏好维持高位<br>
+                • 金龙指数微跌-0.59% → 中概回调压力有限，蔚来大跌但阿里/腾讯ADR稳定<br>
+                • 费城半导体+0.87%创历史新高 → 全球半导体周期强势，利好A股设备/材料<br>
+                • A股节前科创50飙涨逾5% → 科技主线节前已预热，节后有望延续<br><br>
+                <b>结论：</b>节后A股高开概率较大，关注AI算力+半导体主线。港股受南向121亿净流入支撑，开门红可期。
+            </div>
+        </div>
+
+        <!-- 边际变化追踪 -->
+        <div class="card" id="marginal">
+            <h2>📊 边际变化追踪（环比/趋势）</h2>
+            
+            <table>
+                <tr><th>指标</th><th>当前值</th><th>日环比</th><th>近5日趋势</th><th>逻辑影响</th></tr>
+                <tr>
+                    <td>🌊 南向资金</td>
+                    <td>净流入121.92亿</td>
+                    <td class="positive">大幅净流入 ↑</td>
+                    <td>港股通(沪)101.34亿+(深)20.58亿，持续加仓</td>
+                    <td>内资对港股信心坚定，节后开门红基础</td>
+                </tr>
+                <tr>
+                    <td>⚡ 两融余额</td>
+                    <td>约1.78万亿</td>
+                    <td class="neutral">高位震荡</td>
+                    <td>沪市融资余额1.37万亿，杠杆情绪温和</td>
+                    <td>风险偏好中性，未现过热信号</td>
+                </tr>
+                <tr>
+                    <td>💱 离岸人民币</td>
+                    <td>6.9140</td>
+                    <td class="neutral">微幅波动</td>
+                    <td>维持6.90-6.95区间，汇率稳定</td>
+                    <td>汇率平稳利于外资持股，五一后回流可期</td>
+                </tr>
+                <tr>
+                    <td>📈 VIX波动率</td>
+                    <td>16.99</td>
+                    <td class="positive">+0.59%</td>
+                    <td>较月初25.78大幅回落34%，恐慌消退</td>
+                    <td>风险资产友好环境，但需警惕地缘反复</td>
+                </tr>
+                <tr>
+                    <td>🛢️ WTI原油</td>
+                    <td>$102.58</td>
+                    <td class="negative">+1.74%</td>
+                    <td>美伊谈判反复，油价在100美元附近震荡</td>
+                    <td>通胀预期仍存，但较3月峰值显著回落</td>
+                </tr>
+                <tr>
+                    <td>🔋 费城半导体</td>
+                    <td>~9800</td>
+                    <td class="positive">+0.87% ↑</td>
+                    <td>逆势创新高，半导体周期强势</td>
+                    <td>全球AI算力需求支撑，A股映射明确</td>
+                </tr>
+                <tr>
+                    <td>🌐 美元指数</td>
+                    <td>98.23</td>
+                    <td class="positive">+0.18%</td>
+                    <td>日本干预汇市后短线反弹，4月整体走弱</td>
+                    <td>弱美元趋势未改，利于人民币资产</td>
+                </tr>
+            </table>
+            
+            <div class="insight-box">
+                <strong>边际变化总结：</strong><br>
+                <span class="tag tag-bull">正面因素</span>：美股连续创历史新高（纳指突破25000），VIX回落至安全区（16.99），南向资金节前大幅流入121.92亿，费城半导体刷新纪录<br>
+                <span class="tag tag-neutral">中性因素</span>：美伊谈判反复（特朗普"不满意"伊朗方案），油价在100美元附近震荡，金龙指数微跌<br>
+                <span class="tag tag-bear">警惕因素</span>：特朗普威胁下周对欧盟汽车加征25%关税，美伊局势仍有不确定性<br><br>
+                <b>综合判断：</b>边际变化偏向【积极】。假期期间若无重大地缘黑天鹅，节后A股/港股开门红概率较高。
+            </div>
+        </div>
+
+        <!-- 仓位建议 -->
+        <div class="card" id="position">
+            <h2>🎯 仓位建议（详细版，附带逻辑支撑）</h2>
+            
+            <table>
+                <tr>
+                    <th>投资者类型</th>
+                    <th>建议仓位</th>
+                    <th>较节前调整</th>
+                    <th>逻辑支撑</th>
+                </tr>
+                <tr>
+                    <td>🚀 激进型</td>
+                    <td><strong>75-80%</strong></td>
+                    <td>↑ 上调5%</td>
+                    <td>美股纳指突破25000创历史新高，费城半导体强势，A股科创50节前飙涨5%+，科技成长主线明确。节后开门红概率高，可积极布局AI算力/半导体</td>
+                </tr>
+                <tr>
+                    <td>⚖️ 稳健型</td>
+                    <td><strong>65-70%</strong></td>
+                    <td>↑ 上调5%</td>
+                    <td>全球风险偏好回升（VIX低位），南向资金持续流入港股，A股政策托底明确。建议均衡配置科技成长+高股息，留20%现金应对地缘反复</td>
+                </tr>
+                <tr>
+                    <td>🛡️ 保守型</td>
+                    <td><strong>50-55%</strong></td>
+                    <td>维持</td>
+                    <td>美伊谈判仍有不确定性，特朗普关税威胁（欧盟汽车25%），建议以高股息银行、电力为底仓，等待节后方向明确再加仓</td>
+                </tr>
+            </table>
+
+            <h3>仓位调整触发条件</h3>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>🟢 加仓信号</h4>
+                    <ul>
+                        <li>上证指数节后放量突破4150点</li>
+                        <li>VIX回落至15以下（恐慌情绪进一步消退）</li>
+                        <li>美伊谈判取得实质性进展，霍尔木兹通航</li>
+                        <li>北向资金节后首日净流入超50亿</li>
+                        <li>科创板放量突破1500点</li>
+                    </ul>
+                </div>
+                <div class="strategy-card">
+                    <h4>🔴 减仓信号</h4>
+                    <ul>
+                        <li>上证指数跌破4050点且成交量放大</li>
+                        <li>VIX突破20（风险情绪恶化）</li>
+                        <li>美伊谈判破裂，地缘冲突升级</li>
+                        <li>原油突破115美元（通胀预期升温）</li>
+                        <li>特朗普关税政策超预期扩大</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="opportunity-box">
+                <strong>💡 节后仓位操作指南：</strong><br>
+                <b>当前建议：激进型75-80%，稳健型65-70%，均较节前上调5%。</b><br><br>
+                逻辑支撑：<br>
+                1. 美股纳指突破25000创历史新高（+0.89%），标普连续两日创新高，全球风险偏好处于高位<br>
+                2. VIX回落至16.99低位，较4月初高点下跌34%，恐慌情绪大幅消退<br>
+                3. A股节前科创50飙涨逾5%，科技主线已预热，AI算力+半导体成为共识方向<br>
+                4. 南向资金节前大幅净流入121.92亿港元，港股通(沪)净买入101.34亿，内资对港股信心坚定<br>
+                5. 费城半导体+0.87%刷新收盘纪录，英特尔市值突破5000亿美元，全球半导体周期向上<br>
+                6. 美伊谈判虽有反复但双方仍在接触，特朗普威胁未转化为实际行动<br><br>
+                操作建议：节后首日若高开不过分追涨，可等盘中回调布局。重点关注AI算力（浪潮信息、中科曙光）、半导体设备（中微公司、北方华创）、港股互联网（腾讯、美团）。
+            </div>
+        </div>
+
+        <!-- 宏观策略研判 -->
+        <div class="card" id="macro">
+            <h2>🧭 宏观策略研判（机构视角）</h2>
+            
+            <h3>全球资金流向分析</h3>
+            <div class="insight-box">
+                <strong>资金格局：</strong>当前全球资金呈现"美股强弩之末仍创新高、A股政策+科技双轮驱动、港股内外资共振"的特征。<br><br>
+                • <b>美股：</b>纳指突破25000点创历史新高，标普500连续两日创新高，4月创2000年以来最大月度涨幅（+10.42%）。科技股财报是核心驱动力：Alphabet涨10%、苹果涨3.24%，但Meta/微软因AI支出担忧遭抛售。道指小幅收跌，显示工业与科技分化<br>
+                • <b>中概：</b>金龙指数微跌-0.59%，蔚来大跌7.51%（业绩担忧），小鹏跌2.88%，但阿里/腾讯ADR相对稳定。整体回调压力有限<br>
+                • <b>A股：</b>节前科创50飙涨逾5%，科技成长成为主线。4月30日成交2.41万亿，缩量但仍处高位。政策面：数据局AI政策、服务业扩能提质意见持续催化<br>
+                • <b>港股：</b>南向资金节前121.92亿大幅净流入，港股通(沪)101.34亿+(深)20.58亿。中国移动、工行等高股息仍获内资青睐，但阿里遭部分减持
+            </div>
+
+            <h3>政策面解读</h3>
+            <table>
+                <tr><th>政策维度</th><th>最新动态</th><th>市场影响</th></tr>
+                <tr><td>美国关税</td><td>特朗普：下周对欧盟汽车加征25%关税</td><td><span class="tag tag-bear">利空</span> 全球贸易紧张升温，汽车链承压</td></tr>
+                <tr><td>美国监管</td><td>SEC改财报为半年披露提案通过白宫审查</td><td><span class="tag tag-neutral">中性</span> 减少企业披露成本，但降低市场透明度</td></tr>
+                <tr><td>AI产业</td><td>美国国防部与7家AI公司达成协议（OpenAI、谷歌、英伟达等）</td><td><span class="tag tag-bull">利好</span> AI军事应用加速，算力需求再提升</td></tr>
+                <tr><td>汇率政策</td><td>日本财务省干预汇市支撑日元， dollar/yen从160回落</td><td><span class="tag tag-neutral">中性</span> 日元短期企稳，但干预治标不治本</td></tr>
+                <tr><td>能源格局</td><td>阿联酋正式退出欧佩克，结束近60年成员国身份</td><td><span class="tag tag-bear">变数</span> 中东能源格局重构，长期影响待观察</td></tr>
+            </table>
+
+            <h3>国际局势影响</h3>
+            <div class="risk-box">
+                <strong>地缘政治（核心变量）：</strong>美伊谈判进入关键窗口期。<br><br>
+                • 伊朗4月30日向巴基斯坦提交最新谈判方案，由巴方作为中间人与美国谈判<br>
+                • 特朗普盘中表示对伊朗方案"不满意"，油价从99.30反弹至102.58美元<br>
+                • 但双方仍在接触，未完全关闭对话大门。Mercer Advisors预计冲突短期内结束<br>
+                • 霍尔木兹海峡仍未恢复通航，埃克森美孚CEO警告市场尚未完全反映供应冲击<br>
+                • 若海峡持续关闭，后续影响将进一步显现，油价仍有上行风险<br><br>
+                <b>市场影响：</b>美伊谈判是当前最大波动源。若取得进展，VIX有望回落至15以下，油价回落至95美元以下；若恶化，警惕油价突破115美元、全球风险资产回调。
+            </div>
+
+            <h3>AI产业重大动态</h3>
+            <div class="opportunity-box">
+                <strong>🤖 AI专题追踪：</strong><br><br>
+                1. <b>美国国防部与7家AI巨头达成协议</b>：SpaceX、OpenAI、谷歌、英伟达、Reflection、微软、亚马逊AWS。加速美军"AI主导"转型，算力需求再升级<br>
+                2. <b>英特尔涨5.44%市值突破5000亿美元</b>：盘中一度100.45美元创历史新高，半导体设备/制造龙头强势回归<br>
+                3. <b>存储股集体创新高</b>：闪迪+8.25%、希捷+7.91%、美光+4.84%，AI算力带动存储需求爆发<br>
+                4. <b>光通信板块大涨</b>：Applied Optoelectronics+11.65%，Credo+5.96%，AI数据中心光互联需求旺盛<br>
+                5. <b>美银：2027年全球云计算AI资本开支或达1万亿美元</b>，2026年预测上调至8000亿美元，同比+67%<br><br>
+                <b>A股映射：</b>AI算力（浪潮信息、中科曙光）→ 半导体设备（中微公司、北方华创）→ 光通信（中际旭创、新易盛）→ 存储（兆易创新、北京君正）→ PCB（大族数控、生益科技）
+            </div>
+        </div>
+
+        <!-- A股投资逻辑 -->
+        <div class="card" id="a-share">
+            <h2>🇨🇳 A股投资逻辑（基于4月30日收盘数据）</h2>
+            
+            <div class="holiday-banner" style="margin-bottom:16px;">
+                📌 A股五一休市（5月1日-5月5日），节后首个交易日为5月6日（周三）。以下分析基于节前最后交易日数据。
+            </div>
+
+            <h3>板块轮动分析</h3>
+            <table>
+                <tr><th>板块</th><th>影响</th><th>催化因素</th><th>建议</th></tr>
+                <tr>
+                    <td>AI算力/半导体</td>
+                    <td><span class="tag tag-bull">✅ 强正面</span></td>
+                    <td>科创50飙涨逾5%，美股半导体创新高</td>
+                    <td>节后核心主线，设备+材料+光通信</td>
+                </tr>
+                <tr>
+                    <td>科创板</td>
+                    <td><span class="tag tag-bull">✅ 强正面</span></td>
+                    <td>科创50飙涨逾5%创年内新高，资金涌入</td>
+                    <td>硬科技核心阵地，关注半导体+AI</td>
+                </tr>
+                <tr>
+                    <td>商业航天/卫星</td>
+                    <td><span class="tag tag-bull">✅ 正面</span></td>
+                    <td>政策持续催化，6G大会预期</td>
+                    <td>事件驱动，精选有订单的标的</td>
+                </tr>
+                <tr>
+                    <td>新能源</td>
+                    <td><span class="tag tag-neutral">➡️ 中性</span></td>
+                    <td>节前储能/稀土领涨，但分化加剧</td>
+                    <td>关注技术迭代龙头，回避产能过剩</td>
+                </tr>
+                <tr>
+                    <td>消费</td>
+                    <td><span class="tag tag-neutral">➡️ 中性</span></td>
+                    <td>五一假期数据待观察</td>
+                    <td>节后看假期消费数据再定</td>
+                </tr>
+                <tr>
+                    <td>金融</td>
+                    <td><span class="tag tag-neutral">➡️ 中性偏防</span></td>
+                    <td>银行高股息防御属性</td>
+                    <td>高股息银行作底仓配置</td>
+                </tr>
+                <tr>
+                    <td>周期/资源</td>
+                    <td><span class="tag tag-neutral">➡️ 中性</span></td>
+                    <td>油价震荡，工业金属分化</td>
+                    <td>精选铜、铝，回避高波动</td>
+                </tr>
+            </table>
+
+            <h3>资金面分析</h3>
+            <div class="metric-row">
+                <div class="metric-item">
+                    <div class="metric-value">2.41万亿</div>
+                    <div class="metric-label">两市成交额（节前）</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">3507亿</div>
+                    <div class="metric-label">北向成交额</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">1.78万亿</div>
+                    <div class="metric-label">两融余额</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value positive">+121.92亿</div>
+                    <div class="metric-label">南向净流入（节前）</div>
+                </div>
+            </div>
+
+            <div class="insight-box">
+                <strong>资金面总结：</strong>节前两市成交2.41万亿，较前一交易日缩量（假期效应）。北向资金成交3507亿，参与度仍高。两融余额维持1.78万亿高位，杠杆资金未现撤离。南向资金节前大幅净流入121.92亿港元，显示内资对港股信心坚定。节后关注北向资金是否恢复大幅净流入。
+            </div>
+
+            <h3>景气度矩阵</h3>
+            <table>
+                <tr><th>行业</th><th>景气度</th><th>趋势</th><th>催化剂</th></tr>
+                <tr><td>AI算力/光通信</td><td><span class="tag tag-bull">🔥 高</span></td><td>↑ 加速</td><td>美股映射+数据中心建设</td></tr>
+                <tr><td>半导体设备</td><td><span class="tag tag-bull">🔥 高</span></td><td>↑ 加速</td><td>国产替代+全球周期共振</td></tr>
+                <tr><td>科创板</td><td><span class="tag tag-bull">🔥 高</span></td><td>↑ 加速</td><td>科创50飙涨5%，资金涌入</td></tr>
+                <tr><td>商业航天</td><td><span class="tag tag-bull">🔥 高</span></td><td>↑ 加速</td><td>政策+事件双催化</td></tr>
+                <tr><td>新能源</td><td><span class="tag tag-neutral">🟡 中</span></td><td>→ 企稳</td><td>储能/稀土节前领涨</td></tr>
+                <tr><td>银行</td><td><span class="tag tag-neutral">🟡 中</span></td><td>→ 防御</td><td>高股息+低估值</td></tr>
+            </table>
+        </div>
+
+        <!-- 港股核心机会 -->
+        <div class="card" id="hk">
+            <h2>🇭🇰 港股核心机会（基于4月30日数据）</h2>
+            
+            <div class="holiday-banner" style="margin-bottom:16px;">
+                📌 港股五一休市（5月1日），以下分析基于节前最后交易日数据。南向资金节前大幅净流入121.92亿港元。
+            </div>
+
+            <div class="metric-row">
+                <div class="metric-item">
+                    <div class="metric-value positive">+0.28%</div>
+                    <div class="metric-label">恒生指数</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value negative">-0.59%</div>
+                    <div class="metric-label">金龙指数隔夜</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value positive">+121.92亿</div>
+                    <div class="metric-label">南向净流入（节前）</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">26435</div>
+                    <div class="metric-label">恒指点位</div>
+                </div>
+            </div>
+
+            <table>
+                <tr><th>标的类型</th><th>代表标的</th><th>投资逻辑</th><th>催化剂</th></tr>
+                <tr>
+                    <td>互联网巨头</td>
+                    <td>腾讯、阿里、美团</td>
+                    <td>估值折价40-60%，南向持续流入提供支撑</td>
+                    <td>AI战略+业绩修复+外资回流</td>
+                </tr>
+                <tr>
+                    <td>半导体/芯片</td>
+                    <td>中芯国际、华虹半导体</td>
+                    <td>全球半导体周期向上，费城半导体逆势创新高</td>
+                    <td>国产替代+全球周期共振</td>
+                </tr>
+                <tr>
+                    <td>新能源汽车</td>
+                    <td>比亚迪、理想、小鹏</td>
+                    <td>隔夜美股中概新能源回调，但基本面改善</td>
+                    <td>4月销量+出口放量</td>
+                </tr>
+                <tr>
+                    <td>高股息央国企</td>
+                    <td>中国移动、工商银行、中海油</td>
+                    <td>南向资金重仓方向，险资配置需求</td>
+                    <td>股息率+低估值+政策红利</td>
+                </tr>
+                <tr>
+                    <td>医药创新</td>
+                    <td>康方生物、信达生物</td>
+                    <td>行业景气度改善，研发管线兑现</td>
+                    <td>创新药出海+医保谈判</td>
+                </tr>
+            </table>
+
+            <div class="risk-box">
+                <strong>⚠️ 港股风险提示：</strong>隔夜中概金龙指数微跌-0.59%，蔚来大跌7.51%，小鹏跌2.88%。但南向资金节前大幅净流入121.92亿港元，港股通(沪)净买入101.34亿，中国移动/工行获大幅买入。短期注意中概情绪传导，但长线内资配置趋势未改。
+            </div>
+
+            <div class="opportunity-box">
+                <strong>港股配置策略：</strong><br>
+                1. <b>高股息央国企：</b>中国移动、工商银行等仍是南向资金首选，险资+内资共同偏好，防御属性强<br>
+                2. <b>半导体龙头：</b>全球周期向上+国产替代，中芯国际等获外资持续配置，费城半导体创新高提供映射<br>
+                3. <b>互联网巨头：</b>腾讯、阿里估值洼地，节后关注Q1业绩催化。隔夜中概回调有限，不影响长线逻辑<br>
+                4. <b>创新药：</b>行业景气度触底回升，关注研发管线兑现，节后或有资金回流
+            </div>
+        </div>
+
+        <!-- 可转债策略 -->
+        <div class="card" id="bond">
+            <h2>📈 可转债策略（基于4月底数据）</h2>
+            
+            <div class="metric-row">
+                <div class="metric-item">
+                    <div class="metric-value">91.5°</div>
+                    <div class="metric-label">市场温度</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">37.8%</div>
+                    <div class="metric-label">中位溢价率</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">-2.5%</div>
+                    <div class="metric-label">到期收益率</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">~800亿</div>
+                    <div class="metric-label">日成交额</div>
+                </div>
+            </div>
+
+            <div class="risk-box">
+                <strong>⚠️ 估值警示：</strong>转债市场温度91.5°，处于<b>高温区</b>（>90°）。当前策略应【控制仓位+精选个券】，避免盲目追高。130元以上转债占比超75%，市场偏贵。
+            </div>
+
+            <h3>当前策略建议</h3>
+            <table>
+                <tr><th>策略方向</th><th>具体建议</th><th>标的特征</th></tr>
+                <tr>
+                    <td>双低策略</td>
+                    <td>控制仓位在50-60%</td>
+                    <td>价格100-120元、溢价率&lt;30%</td>
+                </tr>
+                <tr>
+                    <td>强赎风险</td>
+                    <td>规避已公告强赎标的</td>
+                    <td>价格&gt;130元且强赎倒计时</td>
+                </tr>
+                <tr>
+                    <td>题材博弈</td>
+                    <td>轻仓参与，快进快出</td>
+                    <td>正股有明确催化的科技类转债（AI、半导体）</td>
+                </tr>
+                <tr>
+                    <td>防守策略</td>
+                    <td>等待温度回落至80°以下</td>
+                    <td>若节后A股高开，转债跟涨空间有限，不追高</td>
+                </tr>
+            </table>
+
+            <div class="insight-box">
+                <strong>转债策略核心：</strong>当前温度91.5°处于高温区，中位数溢价率37.8%偏高，YTM为负(-2.5%)，市场整体偏贵。建议等待温度回落至80°以下再大举加仓。当前以结构性机会为主，关注正股业绩确定性强的科技类转债（AI算力、半导体相关）。节后若A股高开，转债或跟涨但空间有限，不宜追高。
+            </div>
+        </div>
+
+        <!-- 交易策略 -->
+        <div class="card" id="trading">
+            <h2>⚡ 交易策略（专业风控）</h2>
+            
+            <h3>关键点位</h3>
+            <table>
+                <tr><th>指数</th><th>当前点位</th><th>支撑位</th><th>压力位</th><th>情景分析</th></tr>
+                <tr>
+                    <td>上证指数</td>
+                    <td class="positive">4107.52</td>
+                    <td>4080-4100</td>
+                    <td>4120-4150</td>
+                    <td>节后突破4150概率较高</td>
+                </tr>
+                <tr>
+                    <td>创业板指</td>
+                    <td class="positive">3685.42</td>
+                    <td>3650-3670</td>
+                    <td>3700-3720</td>
+                    <td>节前小幅收涨</td>
+                </tr>
+                <tr>
+                    <td>科创50</td>
+                    <td class="positive">~1493</td>
+                    <td>1450-1470</td>
+                    <td>1520-1550</td>
+                    <td>节前飙涨逾5%创年内新高</td>
+                </tr>
+                <tr>
+                    <td>恒生指数</td>
+                    <td class="positive">26435.18</td>
+                    <td>26000-26200</td>
+                    <td>26500-26800</td>
+                    <td>南向121亿支撑，开门红可期</td>
+                </tr>
+            </table>
+
+            <h3>情景分析</h3>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>🌈 乐观情景（概率35%）</h4>
+                    <p><b>触发条件：</b>美伊谈判取得进展+节后A股放量突破4150点</p>
+                    <p style="margin-top:6px;"><b>应对：</b>加仓至85%，重点配置AI算力+半导体+科创板</p>
+                </div>
+                <div class="strategy-card">
+                    <h4>📊 基准情景（概率50%）</h4>
+                    <p><b>特征：</b>节后高开震荡，4100-4150区间运行</p>
+                    <p style="margin-top:6px;"><b>应对：</b>维持65-70%仓位，结构性操作，不追涨</p>
+                </div>
+                <div class="strategy-card">
+                    <h4>⚠️ 谨慎情景（概率15%）</h4>
+                    <p><b>触发条件：</b>美伊谈判破裂+特朗普关税超预期扩大</p>
+                    <p style="margin-top:6px;"><b>应对：</b>减仓至50%，增配防御板块（银行、电力）</p>
+                </div>
+            </div>
+
+            <div class="risk-box">
+                <strong>⚠️ 风控提醒：</strong><br>
+                1. 单一标的仓位不超过总资产的8%<br>
+                2. 设置止损线：个股-8%、指数ETF-5%<br>
+                3. 节后首日若大幅高开（>1.5%），避免冲动追涨，等待盘中回调<br>
+                4. 美伊谈判是最大不确定性，节日期间密切跟踪VIX和原油动向<br>
+                5. 特朗普下周对欧盟汽车加征25%关税，关注贸易链扩散风险<br>
+                6. 可转债市场温度91°处于高温区，节后若A股高开转债空间有限，不追高
+            </div>
+        </div>
+
+        <!-- 摘要卡片 -->
+        <div class="card">
+            <h2>📋 今日要点速览</h2>
+            <div class="opportunity-box">
+                <strong>✅ 利好因素：</strong><br>
+                • 美股纳指突破25000点创历史新高，标普500连续两日创新高<br>
+                • VIX回落至16.99低位，恐慌情绪大幅消退<br>
+                • 费城半导体+0.87%刷新收盘纪录，英特尔市值突破5000亿<br>
+                • A股节前科创50飙涨逾5%，科技主线已预热<br>
+                • 南向资金节前大幅净流入121.92亿港元<br>
+                • 美国国防部与7家AI巨头达成协议，算力需求再升级<br>
+                • 4月标普500创2000年以来最大月度涨幅（+10.42%）
+            </div>
+            <div class="risk-box">
+                <strong>⚠️ 风险因素：</strong><br>
+                • 美伊谈判反复，特朗普对伊朗方案"不满意"<br>
+                • 特朗普威胁下周对欧盟汽车加征25%关税<br>
+                • 霍尔木兹海峡仍未通航，油价在100美元附近震荡<br>
+                • 中概金龙指数微跌-0.59%，蔚来大跌7.51%<br>
+                • 阿联酋正式退出欧佩克，中东能源格局变数增加<br>
+                • 可转债市场温度91°处于高温区，估值偏贵
+            </div>
+            <div class="insight-box">
+                <strong>💡 操作建议：</strong><br>
+                激进型<b>75-80%</b>，稳健型<b>65-70%</b>，均较节前上调5%。重点关注：<br>
+                1. <b>AI算力/半导体：</b>美股映射+政策催化，节后核心主线。科创50节前飙涨5%已预热<br>
+                2. <b>光通信：</b>Applied Optoelectronics隔夜涨11.65%，Credo涨5.96%，AI数据中心光互联需求旺盛<br>
+                3. <b>港股互联网：</b>南向121亿大幅流入，腾讯、阿里估值洼地，节后Q1业绩催化<br>
+                4. <b>高股息防御：</b>银行、电力作底仓，应对地缘不确定性<br><br>
+                <b>一句话策略：</b>节后开门红概率高，科技成长是主线，但不过分追涨，等盘中回调布局。重点关注AI算力+半导体+光通信的A股映射。
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>免责声明：本报告基于公开信息整理，仅供参考，不构成投资建议。市场有风险，投资需谨慎。</p>
+            <p>数据源：财联社 / 新浪财经 / 东方财富 / Investing.com / 金十数据 | 更新时间：2026-05-02 08:19</p>
+            <p>本报告使用真实市场数据 ✅ | 关键数据已与财联社/新浪财经交叉验证</p>
+        </div>
+    </div>
+</body>
+</html>
