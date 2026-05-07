@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日综合晨报 | 2026-05-07</title>
+    <style>
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-card: #1a2035;
+            --text-primary: #f0f4f8;
+            --text-secondary: #94a3b8;
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+            --accent-gold: #f59e0b;
+            --accent-blue: #3b82f6;
+            --border: #1e293b;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid var(--accent-gold);
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+        }
+        .header .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-top: 10px;
+        }
+        .header .date {
+            font-size: 1rem;
+            color: var(--accent-blue);
+            margin-top: 5px;
+        }
+        .card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid var(--border);
+        }
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        @media (max-width: 768px) {
+            .grid-3, .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        .metric-box {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .metric-box .label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+        .metric-box .value {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .metric-box .change {
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+        .positive {
+            color: var(--accent-green);
+        }
+        .negative {
+            color: var(--accent-red);
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            background: var(--bg-secondary);
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+        tr:hover {
+            background: var(--bg-secondary);
+        }
+        .news-list {
+            list-style: none;
+        }
+        .news-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        .news-list li::before {
+            content: "▸";
+            color: var(--accent-gold);
+            margin-right: 10px;
+        }
+        .highlight-box {
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid var(--accent-gold);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+        .signal-box {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .signal-item {
+            flex: 1;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .signal-add {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--accent-green);
+        }
+        .signal-reduce {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--accent-red);
+        }
+        .signal-hold {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--accent-blue);
+        }
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .tag-bull {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--accent-green);
+        }
+        .tag-bear {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--accent-red);
+        }
+        .tag-neutral {
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--accent-blue);
+        }
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .scenario-box {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .scenario-item {
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .scenario-optimistic {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--accent-green);
+        }
+        .scenario-base {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--accent-blue);
+        }
+        .scenario-pessimistic {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--accent-red);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>每日综合晨报</h1>
+            <div class="subtitle">全球市场 · A股港股 · 可转债策略 · 仓位建议</div>
+            <div class="date">2026-05-07 | 数据来源: 东方财富 / 腾讯财经 / 新浪财经</div>
+        </div>
+
+        <!-- 核心指标 -->
+        <div class="card">
+            <div class="card-title">📊 三大核心敏感指标</div>
+            <div class="grid-3">
+                <div class="metric-box">
+                    <div class="label">VIX恐慌指数</div>
+                    <div class="value">17.44</div>
+                    <div class="change positive">+0.35%</div>
+                    <div style="font-size:0.85rem;color:var(--text-secondary);margin-top:8px;">低位震荡，风险偏好偏高</div>
+                </div>
+                <div class="metric-box">
+                    <div class="label">WTI原油价格</div>
+                    <div class="value">96.0美元</div>
+                    <div class="change negative">-5.0%</div>
+                    <div style="font-size:0.85rem;color:var(--text-secondary);margin-top:8px;">盘中一度暴跌超13%后反弹</div>
+                </div>
+                <div class="metric-box">
+                    <div class="label">美元指数DXY</div>
+                    <div class="value">98.2</div>
+                    <div class="change negative">-0.15%</div>
+                    <div style="font-size:0.85rem;color:var(--text-secondary);margin-top:8px;">美伊缓和预期削弱避险需求</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 隔夜美股 -->
+        <div class="card">
+            <div class="card-title">🇺🇸 美股隔夜（5月6日收盘）</div>
+            <div class="grid-3">
+                <div class="metric-box">
+                    <div class="label">道琼斯</div>
+                    <div class="value">49910.59</div>
+                    <div class="change positive">+1.24% (+612点)</div>
+                </div>
+                <div class="metric-box">
+                    <div class="label">纳斯达克</div>
+                    <div class="value">25838.94</div>
+                    <div class="change positive">+2.03% (+513点)</div>
+                    <span class="tag tag-bull">历史新高</span>
+                </div>
+                <div class="metric-box">
+                    <div class="label">标普500</div>
+                    <div class="value">7365.12</div>
+                    <div class="change positive">+1.46% (+106点)</div>
+                    <span class="tag tag-bull">历史新高</span>
+                </div>
+            </div>
+            <div class="highlight-box" style="margin-top:20px;">
+                <strong>核心逻辑：</strong>美伊停战预期主导市场情绪，油价暴跌释放通胀压力，AI芯片股（AMD+18.6%、英伟达+5.7%）推动纳指创新高。中国金龙指数大涨3.45%，百度+11.5%、阿里+7.0%，中概资产强势反弹。
+            </div>
+        </div>
+
+        <!-- A股行情 -->
+        <div class="card">
+            <div class="card-title">🇨🇳 A股投资逻辑（5月6日收盘）</div>
+            <div class="grid-3">
+                <div class="metric-box">
+                    <div class="label">上证指数</div>
+                    <div class="value">4160.17</div>
+                    <div class="change positive">+1.17%</div>
+                </div>
+                <div class="metric-box">
+                    <div class="label">深证成指</div>
+                    <div class="value">15459.62</div>
+                    <div class="change positive">+2.33%</div>
+                </div>
+                <div class="metric-box">
+                    <div class="label">科创50</div>
+                    <div class="value">1656.95</div>
+                    <div class="change positive">+5.47%</div>
+                    <span class="tag tag-bull">领涨</span>
+                </div>
+            </div>
+            <div style="margin-top:20px;">
+                <div class="grid-2">
+                    <div>
+                        <strong style="color:var(--accent-gold);">两市成交额：3.227万亿元</strong>
+                        <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:5px;">沪市1.466万亿 + 深市1.761万亿，量能充沛，科技叙事激活市场</p>
+                    </div>
+                    <div>
+                        <strong style="color:var(--accent-gold);">涨跌家数：涨3677 / 跌1458</strong>
+                        <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:5px;">普涨格局，赚钱效应显著，半导体/AI主线爆发</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 板块轮动 -->
+        <div class="card">
+            <div class="card-title">🔄 板块轮动分析</div>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>领涨板块</th>
+                        <th>涨跌幅</th>
+                        <th>领涨股</th>
+                        <th>逻辑支撑</th>
+                    </tr>
+                    
+                    <tr>
+                        <td>玻纤制造</td>
+                        <td class="positive">+7.99%</td>
+                        <td>宏和科技</td>
+                        <td>资金大幅流入，板块热度高涨</td>
+                    </tr>
+                    <tr>
+                        <td>钼</td>
+                        <td class="positive">+7.39%</td>
+                        <td>盛龙股份</td>
+                        <td>资金大幅流入，板块热度高涨</td>
+                    </tr>
+                    <tr>
+                        <td>文字媒体</td>
+                        <td class="positive">+5.57%</td>
+                        <td>掌阅科技</td>
+                        <td>资金大幅流入，板块热度高涨</td>
+                    </tr>
+                    <tr>
+                        <td>黄金</td>
+                        <td class="positive">+5.55%</td>
+                        <td>晓程科技</td>
+                        <td>资金大幅流入，板块热度高涨</td>
+                    </tr>
+                    <tr>
+                        <td>贵金属</td>
+                        <td class="positive">+5.53%</td>
+                        <td>晓程科技</td>
+                        <td>资金大幅流入，板块热度高涨</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="highlight-box" style="margin-top:15px;">
+                <strong>景气度矩阵：</strong>半导体/AI算力（高景气，资金大量流入）> 黄金/贵金属（地缘避险+涨价）> 新能源（政策驱动）> 消费（复苏缓慢）> 地产（政策托底，结构性机会）
+            </div>
+        </div>
+
+        <!-- 边际变化追踪 -->
+        <div class="card">
+            <div class="card-title">📈 边际变化追踪</div>
+            <div class="grid-2">
+                <div class="metric-box">
+                    <div class="label">南向资金（5月6日）</div>
+                    <div class="value negative">-85.65亿港元</div>
+                    <div class="change negative">净流出</div>
+                    <div style="font-size:0.85rem;color:var(--text-secondary);margin-top:8px;">港股通(沪)-13.61亿 / (深)-72.04亿，节后首日获利了结</div>
+                </div>
+                <div class="metric-box">
+                    <div class="label">两融余额</div>
+                    <div class="value">26512亿元</div>
+                    <div class="change positive">+557亿（周环比）</div>
+                    <div style="font-size:0.85rem;color:var(--text-secondary);margin-top:8px;">杠杆资金持续加仓，风险偏好回升</div>
+                </div>
+            </div>
+            <div style="margin-top:20px;">
+                <div class="grid-2">
+                    <div class="metric-box">
+                        <div class="label">离岸人民币</div>
+                        <div class="value">7.18</div>
+                        <div class="change positive">+0.12%</div>
+                        <div style="font-size:0.85rem;color:var(--text-secondary);margin-top:8px;">美元走弱背景下人民币被动升值，出口链受益</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="label">10年期国债收益率（中国）</div>
+                        <div class="value">1.76%</div>
+                        <div class="change negative">-2BP（周环比）</div>
+                        <div style="font-size:0.85rem;color:var(--text-secondary);margin-top:8px;">债市延续牛市，流动性宽松预期支撑</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 港股核心机会 -->
+        <div class="card">
+            <div class="card-title">🇭🇰 港股核心机会（5月6日收盘）</div>
+            <div class="grid-3">
+                <div class="metric-box">
+                    <div class="label">恒生指数</div>
+                    <div class="value">26213.78</div>
+                    <div class="change positive">+1.22%</div>
+                </div>
+                <div class="metric-box">
+                    <div class="label">恒生科技</div>
+                    <div class="value">4969.20</div>
+                    <div class="change positive">+0.8%</div>
+                </div>
+                <div class="metric-box">
+                    <div class="label">港股成交额</div>
+                    <div class="value">3047亿港元</div>
+                    <div class="change positive">显著放量</div>
+                </div>
+            </div>
+            <div style="margin-top:20px;">
+                <table>
+                    <tr>
+                        <th>主题</th>
+                        <th>核心逻辑</th>
+                        <th>关注标的</th>
+                    </tr>
+                    <tr>
+                        <td>互联网巨头</td>
+                        <td>AI商业化加速，阿里云/腾讯云收入高增，估值修复中</td>
+                        <td>腾讯、阿里、美团</td>
+                    </tr>
+                    <tr>
+                        <td>半导体</td>
+                        <td>AI芯片需求爆发，华虹半导体涨9.3%，中芯国际涨5.7%</td>
+                        <td>中芯国际、华虹半导体</td>
+                    </tr>
+                    <tr>
+                        <td>高股息央国企</td>
+                        <td>港股通红利税预期调整，中国移动、中海油受追捧</td>
+                        <td>中国移动、中国海洋石油</td>
+                    </tr>
+                    <tr>
+                        <td>黄金股</td>
+                        <td>金价突破4700美元，山东黄金涨7.3%，赤峰黄金涨11%</td>
+                        <td>山东黄金、紫金矿业</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- 可转债策略 -->
+        <div class="card">
+            <div class="card-title">💎 可转债策略</div>
+            <div class="grid-3">
+                <div class="metric-box">
+                    <div class="label">深证转债指数</div>
+                    <div class="value">390.87</div>
+                    <div class="change positive">+1.35%</div>
+                </div>
+                <div class="metric-box">
+                    <div class="label">成交额</div>
+                    <div class="value">383.2亿</div>
+                    <div class="change positive">活跃</div>
+                </div>
+                <div class="metric-box">
+                    <div class="label">市场温度</div>
+                    <div class="value" style="color:var(--accent-blue);">中性偏暖</div>
+                    <div class="change">中等</div>
+                </div>
+            </div>
+            <div class="highlight-box" style="margin-top:15px;">
+                <strong>策略建议：</strong>转债跟随正股上涨，但溢价率有所压缩。关注科技成长类转债（半导体、AI算力），回避高溢价纯债型品种。个券选择：东阳光（算力合同160-190亿）、江波龙（存储芯片龙头）。
+            </div>
+        </div>
+
+        <!-- 仓位建议 -->
+        <div class="card">
+            <div class="card-title">🎯 仓位建议（详细版）</div>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>投资者类型</th>
+                        <th>建议仓位</th>
+                        <th>逻辑支撑</th>
+                    </tr>
+                    <tr>
+                        <td><strong>激进型</strong></td>
+                        <td><span class="positive">85-90%</span></td>
+                        <td>美股新高+中概强势，A股科技主线爆发，科创50涨5.5%。利用回调加仓AI算力、半导体、存储芯片。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>稳健型</strong></td>
+                        <td><span style="color:var(--accent-blue);">70-75%</span></td>
+                        <td>地缘风险（霍尔木兹海峡）尚未完全消退，保留25%现金应对波动。核心仓位配置高景气科技+高股息防守。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>保守型</strong></td>
+                        <td><span style="color:var(--accent-gold);">50-60%</span></td>
+                        <td>油价剧烈波动（日内±13%）显示市场脆弱性，低仓位参与反弹。以可转债、高股息红利ETF为主。</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="signal-box">
+                <div class="signal-item signal-add">
+                    <strong style="color:var(--accent-green);">⬆ 加仓信号</strong>
+                    <p style="font-size:0.85rem;margin-top:8px;">科创50放量突破1600点；两市成交额持续>3万亿；北向恢复净流入；美伊正式签署停战协议</p>
+                </div>
+                <div class="signal-item signal-reduce">
+                    <strong style="color:var(--accent-red);">⬇ 减仓信号</strong>
+                    <p style="font-size:0.85rem;margin-top:8px;">VIX突破20且持续上行；霍尔木兹海峡航运完全中断；A股缩量跌破4000点；两融余额连续3日下降</p>
+                </div>
+                <div class="signal-item signal-hold">
+                    <strong style="color:var(--accent-blue);">➡ 维持信号</strong>
+                    <p style="font-size:0.85rem;margin-top:8px;">当前处于震荡向上格局，趋势未变但波动加大。持仓观望，不追高，回调再布局。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 宏观策略研判 -->
+        <div class="card">
+            <div class="card-title">🌍 宏观策略研判</div>
+            <div class="grid-2">
+                <div>
+                    <h4 style="color:var(--accent-gold);margin-bottom:10px;">全球资金流向</h4>
+                    <ul class="news-list">
+                        <li>美股连续创新高吸引全球资金，AI主题仍是主航道</li>
+                        <li>中国资产反弹（金龙指数+3.5%），外资阶段性回流</li>
+                        <li>黄金突破4700美元，避险资金与投机资金共振</li>
+                        <li>油价暴跌释放通胀压力，美联储降息预期升温</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color:var(--accent-gold);margin-bottom:10px;">政策面解读</h4>
+                    <ul class="news-list">
+                        <li>美联储维持利率不变，市场定价年内降息2次</li>
+                        <li>中国央行MLF操作4000亿，流动性保持充裕</li>
+                        <li>财政政策发力：特别国债、设备更新政策落地</li>
+                        <li>央企市值管理培训推进，近50家央企参加</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight-box" style="margin-top:15px;">
+                <strong>国际局势影响：</strong>美伊局势是当下最大变量。特朗普给出一周谈判窗口，若达成协议则油价有望回落至80美元以下，全球风险偏好进一步回升；若谈判破裂，霍尔木兹海峡封锁风险将推升油价至120+美元，压制全球股市。
+            </div>
+        </div>
+
+        <!-- 交易策略 -->
+        <div class="card">
+            <div class="card-title">⚔️ 交易策略</div>
+            <div class="grid-2">
+                <div class="metric-box">
+                    <div class="label">上证指数关键点位</div>
+                    <div style="text-align:left;margin-top:10px;">
+                        <p>支撑位：<span class="positive">4100点</span>（5日均线）</p>
+                        <p>压力位：<span class="negative">4200点</span>（前期高点）</p>
+                        <p>强支撑：<span class="positive">4000点</span>（心理关口+政策底）</p>
+                    </div>
+                </div>
+                <div class="metric-box">
+                    <div class="label">创业板指关键点位</div>
+                    <div style="text-align:left;margin-top:10px;">
+                        <p>支撑位：<span class="positive">3700点</span></p>
+                        <p>压力位：<span class="negative">3850点</span>（年线附近）</p>
+                        <p>强支撑：<span class="positive">3600点</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="scenario-box" style="margin-top:20px;">
+                <div class="scenario-item scenario-optimistic">
+                    <strong style="color:var(--accent-green);">乐观情景</strong>
+                    <p style="font-size:0.85rem;margin-top:8px;">美伊达成停战协议，油价跌至85美元。A股突破4200点，科创50挑战1700点。仓位可加至90%。</p>
+                </div>
+                <div class="scenario-item scenario-base">
+                    <strong style="color:var(--accent-blue);">基准情景</strong>
+                    <p style="font-size:0.85rem;margin-top:8px;">美伊谈判僵持，油价在95-105美元震荡。A股在4000-4200区间震荡，结构性行情持续。维持70-75%仓位。</p>
+                </div>
+                <div class="scenario-item scenario-pessimistic">
+                    <strong style="color:var(--accent-red);">谨慎情景</strong>
+                    <p style="font-size:0.85rem;margin-top:8px;">霍尔木兹海峡封锁，油价冲上120美元。全球股市回调，A股跌破4000点。减仓至50%以下，增配黄金/债券。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 要闻精选 -->
+        <div class="card">
+            <div class="card-title">📰 要闻精选</div>
+            <ul class="news-list">
+                <li>特朗普称美伊'很有可能'达成协议，给出一周时间窗口</li>
+                <li>国际油价6日大跌逾7%，盘中WTI一度暴跌超13%后反弹</li>
+                <li>AMD暴涨18.64%创历史新高，英伟达涨5.68%市值重回5万亿美元</li>
+                <li>三星电子暴涨14%，市值首破1万亿美元，成亚洲第二家</li>
+                <li>日经225指数首次突破61000点，创历史新高</li>
+                <li>中国金龙指数大涨超3%，百度涨11.53%、阿里涨6.95%</li>
+                <li>五粮液集团拟30-50亿元增持公司股份</li>
+                <li>霍尔木兹海峡局势：伊朗船只试图突破封锁，美战机开火</li>
+                
+            </ul>
+        </div>
+
+        <!-- 风控提醒 -->
+        <div class="card" style="border:1px solid var(--accent-red);">
+            <div class="card-title" style="color:var(--accent-red);">⚠️ 风控提醒</div>
+            <ul class="news-list">
+                <li><strong>地缘风险：</strong>霍尔木兹海峡局势未明，伊朗船只与美战机冲突升级风险</li>
+                <li><strong>波动风险：</strong>原油日内波动超13%，高杠杆品种需警惕爆仓</li>
+                <li><strong>估值风险：</strong>美股科技巨头估值处于历史高位，AMD PE超100倍</li>
+                <li><strong>流动性风险：</strong>南向资金净流出85亿港元，港股外资动向需密切关注</li>
+                <li><strong>政策风险：</strong>美国FDA拟禁用中国临床数据传闻，创新药板块承压</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>本报告基于公开市场数据整理，不构成投资建议。投资有风险，入市需谨慎。</p>
+            <p>生成时间：2026-05-07 08:19:06 | 数据源：东方财富、新浪财经、腾讯财经、证券时报</p>
+        </div>
+    </div>
+</body>
+</html>
